@@ -9,9 +9,13 @@ Se você quiser ler mais sobre:
 * [React](https://reactjs.org/)
 * [Gatsby](https://www.gatsbyjs.org/)
 
-A documentação desse README ainda está pobre, mas ainda é o começo....
+A documentação desse README ainda está pobre, mas ainda é o **começo.... de uma grande jornada**.
 
-*Working software over comprehensive documentation* 
+Lembre-se: 
+
+```
+Working software over comprehensive documentation
+``` 
 
 [Manifesto Ágil](https://agilemanifesto.org/)
 
