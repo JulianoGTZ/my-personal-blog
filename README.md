@@ -11,13 +11,13 @@ Se você quiser ler mais sobre:
 
 A documentação desse README ainda está pobre, mas ainda é o **começo.... de uma grande jornada**.
 
-Lembre-se: 
+Lembre-se do bom e velho [Manifesto Ágil](https://agilemanifesto.org/):
 
 ```
 Working software over comprehensive documentation
 ``` 
 
-[Manifesto Ágil](https://agilemanifesto.org/)
+
 
 
 
