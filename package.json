@@ -11,7 +11,7 @@
     "flow": "flow",
     "lint:js": "eslint --cache --ext .js,.jsx .",
     "lint:scss": "stylelint \"src/**/*.scss\"",
-    "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\" \"yarn flow\"",
+    "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\"",
     "test": "jest --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js"
@@ -102,8 +102,6 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.18.3",
     "eslint-watch": "6.0.1",
-    "flow-bin": "^0.118.0",
-    "flow-typed": "^2.6.2",
     "gh-pages": "2.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "25.1.0",
