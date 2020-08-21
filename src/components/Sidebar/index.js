@@ -1,2 +1,1 @@
-// @flow strict
-export { default } from './Sidebar';
+export { default } from './Sidebar.jsx';

@@ -1,12 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { useStaticQuery, StaticQuery } from 'gatsby';
-import TagTemplate from './tag-template';
+import NotFoundTemplate from './not-found-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
-import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
-import pageContext from '../../jest/__fixtures__/page-context';
 
-describe('TagTemplate', () => {
+describe('NotFoundTemplate', () => {
   beforeEach(() => {
     StaticQuery.mockImplementationOnce(
       ({ render }) => render(siteMetadata),
@@ -14,15 +12,8 @@ describe('TagTemplate', () => {
     );
   });
 
-  const props = {
-    data: {
-      ...allMarkdownRemark,
-    },
-    ...pageContext,
-  };
-
   it('renders correctly', () => {
-    const tree = renderer.create(<TagTemplate {...props} />).toJSON();
+    const tree = renderer.create(<NotFoundTemplate />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
