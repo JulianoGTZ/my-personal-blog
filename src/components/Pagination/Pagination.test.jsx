@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Pagination from './Pagination';
@@ -8,7 +7,7 @@ describe('Pagination', () => {
     prevPagePath: '/page/1',
     nextPagePath: '/page/3',
     hasNextPage: true,
-    hasPrevPage: true
+    hasPrevPage: true,
   };
 
   it('renders correctly', () => {
