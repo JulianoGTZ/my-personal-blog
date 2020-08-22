@@ -1,5 +1,3 @@
-'use strict';
-
 const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
 
@@ -12,14 +10,14 @@ const onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'slug',
-        value: `/${dirname}/${node.frontmatter.slug}`
+        value: `/${dirname}/${node.frontmatter.slug}`,
       });
     } else {
       const value = createFilePath({ node, getNode });
       createNodeField({
         node,
         name: 'slug',
-        value
+        value,
       });
     }
 

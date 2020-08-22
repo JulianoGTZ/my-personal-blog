@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'gatsby';
 import { PAGINATION } from '../../constants';
@@ -23,19 +24,19 @@ const Pagination = ({
   });
 
   return (
-    <div className={styles['pagination']}>
-      <div className={styles['pagination__prev']}>
+    <div className={styles.pagination}>
+      <div className={styles.pagination__prev}>
         <Link
-          rel='prev'
+          rel="prev"
           to={hasPrevPage ? prevPagePath : '/'}
           className={prevClassName}
         >
           {PAGINATION.PREV_PAGE}
         </Link>
       </div>
-      <div className={styles['pagination__next']}>
+      <div className={styles.pagination__next}>
         <Link
-          rel='next'
+          rel="next"
           to={hasNextPage ? nextPagePath : '/'}
           className={nextClassName}
         >
@@ -44,6 +45,13 @@ const Pagination = ({
       </div>
     </div>
   );
+};
+
+Pagination.propTypes = {
+  prevPagePath: PropTypes.bool.isRequired,
+  nextPagePath: PropTypes.bool.isRequired,
+  hasNextPage: PropTypes.bool.isRequired,
+  hasPrevPage: PropTypes.bool.isRequired,
 };
 
 export default Pagination;

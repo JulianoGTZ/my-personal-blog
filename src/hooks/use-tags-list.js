@@ -15,7 +15,7 @@ const useTagsList = () => {
           }
         }
       }
-    `
+    `,
   );
 
   return allMarkdownRemark.group;

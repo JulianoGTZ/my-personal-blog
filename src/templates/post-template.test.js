@@ -8,8 +8,8 @@ import markdownRemark from '../../jest/__fixtures__/markdown-remark';
 describe('PostTemplate', () => {
   const props = {
     data: {
-      ...markdownRemark
-    }
+      ...markdownRemark,
+    },
   };
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('PostTemplate', () => {
       ({ render }) => (
         render(siteMetadata)
       ),
-      useStaticQuery.mockReturnValue(siteMetadata)
+      useStaticQuery.mockReturnValue(siteMetadata),
     );
   });
 

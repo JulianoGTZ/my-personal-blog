@@ -8,7 +8,7 @@ describe('Comments', () => {
   beforeEach(() => {
     StaticQuery.mockImplementationOnce(
       ({ render }) => render(siteMetadata),
-      useStaticQuery.mockReturnValue(siteMetadata)
+      useStaticQuery.mockReturnValue(siteMetadata),
     );
   });
 

@@ -15,7 +15,7 @@ const useCategoriesList = () => {
           }
         }
       }
-    `
+    `,
   );
 
   return allMarkdownRemark.group;

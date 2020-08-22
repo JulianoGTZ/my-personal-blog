@@ -1,10 +1,8 @@
-'use strict';
-
 const babelOptions = {
   presets: [
     '@babel/react',
     '@babel/env',
-    'babel-preset-gatsby'
+    'babel-preset-gatsby',
   ],
   plugins: [
     '@babel/plugin-proposal-optional-chaining',

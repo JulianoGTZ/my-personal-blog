@@ -8,7 +8,7 @@ import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
 describe('TagsListTemplate', () => {
   const props = {
     ...siteMetadata,
-    ...allMarkdownRemark
+    ...allMarkdownRemark,
   };
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('TagsListTemplate', () => {
       ({ render }) => (
         render(props)
       ),
-      useStaticQuery.mockReturnValue(props)
+      useStaticQuery.mockReturnValue(props),
     );
   });
 

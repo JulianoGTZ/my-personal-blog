@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const siteConfig = require('../config.js');
 
@@ -13,8 +11,8 @@ const onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
       React.createElement('style', {
         key: 'katex-inline-stylesheet',
-        dangerouslySetInnerHTML: { __html: katexStylesheet.toString() }
-      })
+        dangerouslySetInnerHTML: { __html: katexStylesheet.toString() },
+      }),
     ]);
   }
 };

@@ -15,9 +15,8 @@ const IndexTemplate = ({ data, pageContext }) => {
     hasNextPage,
     hasPrevPage,
     prevPagePath,
-    nextPagePath
+    nextPagePath,
   } = pageContext;
-
 
   const { edges } = data.allMarkdownRemark;
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
