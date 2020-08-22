@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Author from './Author';
 import Contacts from './Contacts';
 import Copyright from './Copyright';
@@ -19,6 +20,10 @@ const Sidebar = ({ isIndex }) => {
       </div>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  isIndex: PropTypes.bool.isRequired,
 };
 
 export default Sidebar;

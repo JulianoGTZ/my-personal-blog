@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
@@ -36,5 +37,12 @@ export const query = graphql`
     }
   }
 `;
+
+PostTemplate.propTypes = {
+  data: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    markdownRemark: PropTypes.any.isRequired,
+  }).isRequired,
+};
 
 export default PostTemplate;

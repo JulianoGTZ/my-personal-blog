@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -7,25 +8,24 @@ import Page from '../components/Page';
 import Pagination from '../components/Pagination';
 import { useSiteMetadata } from '../hooks';
 
-const TagTemplate = ({ data, pageContext }) => {
+const IndexTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
   const {
-    tag,
     currentPage,
+    hasNextPage,
+    hasPrevPage,
     prevPagePath,
     nextPagePath,
-    hasPrevPage,
-    hasNextPage,
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
+  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
-      <Page title={tag}>
+      <Sidebar isIndex />
+      <Page>
         <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}
@@ -39,17 +39,11 @@ const TagTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query TagPage($tag: String, $postsLimit: Int!, $postsOffset: Int!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
+  query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
     allMarkdownRemark(
         limit: $postsLimit,
         skip: $postsOffset,
-        filter: { frontmatter: { tags: { in: [$tag] }, template: { eq: "post" }, draft: { ne: true } } },
+        filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
       ){
       edges {
@@ -70,4 +64,19 @@ export const query = graphql`
   }
 `;
 
-export default TagTemplate;
+IndexTemplate.propTypes = {
+  data: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    allMarkdownRemark: PropTypes.any.isRequired,
+  }).isRequired,
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    prevPagePath: PropTypes.string.isRequired,
+    nextPagePath: PropTypes.string.isRequired,
+    hasPrevPage: PropTypes.bool.isRequired,
+    hasNextPage: PropTypes.bool.isRequired,
+  }).isRequired,
+};
+
+export default IndexTemplate;
