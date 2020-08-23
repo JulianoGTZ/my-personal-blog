@@ -39,7 +39,6 @@
     "autoprefixer": "9.7.4",
     "bluebird": "^3.7.2",
     "classnames": "^2.2.6",
-    "codecov": "^3.6.4",
     "eslint-config-prettier": "^6.11.0",
     "gatsby": "^2.19.12",
     "gatsby-link": "^2.2.29",
