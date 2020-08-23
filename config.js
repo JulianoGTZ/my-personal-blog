@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   url: 'https://lumen.netlify.com',
   pathPrefix: '/',
@@ -13,16 +11,16 @@ module.exports = {
   menu: [
     {
       label: 'Articles',
-      path: '/'
+      path: '/',
     },
     {
       label: 'About me',
-      path: '/pages/about'
+      path: '/pages/about',
     },
     {
       label: 'Contact me',
-      path: '/pages/contacts'
-    }
+      path: '/pages/contacts',
+    },
   ],
   author: {
     name: 'John Doe',
@@ -44,6 +42,6 @@ module.exports = {
       codepen: '',
       youtube: '',
       soundcloud: '',
-    }
-  }
+    },
+  },
 };

@@ -1,10 +1,8 @@
-'use strict';
-
 const babelOptions = {
   presets: [
     '@babel/react',
     '@babel/env',
-    'babel-preset-gatsby'
+    'babel-preset-gatsby',
   ],
   plugins: [
     '@babel/plugin-proposal-optional-chaining',
@@ -13,4 +11,5 @@ const babelOptions = {
   ],
 };
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 module.exports = require('babel-jest').createTransformer(babelOptions);

@@ -1,4 +1,3 @@
-// @flow strict
 import { useStaticQuery, graphql } from 'gatsby';
 
 const useSiteMetadata = () => {
@@ -41,7 +40,7 @@ const useSiteMetadata = () => {
           }
         }
       }
-    `
+    `,
   );
 
   return site.siteMetadata;

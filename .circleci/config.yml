@@ -3,10 +3,10 @@ version: 2
 defaults: &defaults
   docker:
     - image: circleci/node:10.19.0
-  working_directory: ~/gatsby-starter-lumen
+  working_directory: ~/juliano-lima-personal-blog
 
 jobs:
-  install:
+  build:
     <<: *defaults
     steps:
       - checkout
@@ -50,33 +50,17 @@ jobs:
           paths:
             - coverage
 
-  codecov:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          keys:
-            - coverage-output-{{ .Environment.CIRCLE_SHA1 }}
-      - run: yarn global add codecov
-      - run: yarn codecov
-    
 workflows:
   version: 2
   test:
     jobs:
-      - install
+      - build
       - lint:
           requires:
-            - install
+            - build
       - test:
           requires:
-            - install
+            - build
       - coverage:
           requires:
-            - install
-      - codecov:
-          requires:
-            - coverage
+            - build
