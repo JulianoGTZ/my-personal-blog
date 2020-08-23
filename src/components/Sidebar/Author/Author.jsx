@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withPrefix, Link } from 'gatsby';
 import styles from './Author.module.scss';
 
@@ -30,5 +31,14 @@ const Author = ({ author, isIndex }) => (
     <p className={styles.author__subtitle}>{author.bio}</p>
   </div>
 );
+
+Author.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
+    bio: PropTypes.string.isRequired,
+  }).isRequired,
+  isIndex: PropTypes.bool.isRequired,
+};
 
 export default Author;

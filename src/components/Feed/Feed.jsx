@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'gatsby';
 import styles from './Feed.module.scss';
@@ -45,5 +46,26 @@ const Feed = ({ edges }) => (
     ))}
   </div>
 );
+
+Feed.propTypes = {
+  edges: PropTypes.arrayOf({
+    node: PropTypes.shape({
+      fields: PropTypes.shape({
+        slug: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        tagSlugs: PropTypes.string.isRequired,
+      }),
+      frontmatter: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+        title: PropTypes.string.isRequired,
+      }),
+      id: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+};
 
 export default Feed;

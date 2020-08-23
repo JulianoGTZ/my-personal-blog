@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PagePreview = ({ entry, widgetFor }) => {
   const body = widgetFor('body');
@@ -10,6 +11,11 @@ const PagePreview = ({ entry, widgetFor }) => {
       <div className="page__body">{body}</div>
     </div>
   );
+};
+
+PagePreview.propTypes = {
+  entry: PropTypes.func.isRequired,
+  widgetFor: PropTypes.func.isRequired,
 };
 
 export default PagePreview;

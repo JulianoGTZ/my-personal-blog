@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Page.module.scss';
 
 const Page = ({ title, children }) => {
@@ -16,6 +17,11 @@ const Page = ({ title, children }) => {
       </div>
     </div>
   );
+};
+
+Page.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default Page;

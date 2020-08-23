@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styles from './Menu.module.scss';
 
@@ -19,5 +20,14 @@ const Menu = ({ menu }) => (
     </ul>
   </nav>
 );
+
+Menu.propTypes = {
+  menu: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Menu;

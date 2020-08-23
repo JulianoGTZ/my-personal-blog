@@ -17,7 +17,6 @@ const Author = () => {
           target="_blank"
         >
           <strong>{author.name}</strong>
-          {' '}
           on Twitter
         </a>
       </p>

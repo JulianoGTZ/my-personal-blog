@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PostPreview = ({ entry, widgetFor }) => {
   const body = widgetFor('body');
@@ -10,6 +11,11 @@ const PostPreview = ({ entry, widgetFor }) => {
       <div className="post__body">{body}</div>
     </div>
   );
+};
+
+PostPreview.propTypes = {
+  entry: PropTypes.func.isRequired,
+  widgetFor: PropTypes.func.isRequired,
 };
 
 export default PostPreview;

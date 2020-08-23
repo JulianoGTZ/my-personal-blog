@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Author from './Author';
 import Comments from './Comments';
@@ -33,6 +34,25 @@ const Post = ({ post }) => {
       </div>
     </div>
   );
+};
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      tagSlugs: PropTypes.string.isRequired,
+    }),
+    frontmatter: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+    id: PropTypes.string.isRequired,
+    html: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Post;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -20,7 +21,10 @@ const CategoryTemplate = ({ data, pageContext }) => {
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `${category} - Page ${currentPage} - ${siteTitle}` : `${category} - ${siteTitle}`;
+  const pageTitle =
+    currentPage > 0
+      ? `${category} - Page ${currentPage} - ${siteTitle}`
+      : `${category} - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -41,11 +45,17 @@ const CategoryTemplate = ({ data, pageContext }) => {
 export const query = graphql`
   query CategoryPage($category: String, $postsLimit: Int!, $postsOffset: Int!) {
     allMarkdownRemark(
-        limit: $postsLimit,
-        skip: $postsOffset,
-        filter: { frontmatter: { category: { eq: $category }, template: { eq: "post" }, draft: { ne: true } } },
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ){
+      limit: $postsLimit
+      skip: $postsOffset
+      filter: {
+        frontmatter: {
+          category: { eq: $category }
+          template: { eq: "post" }
+          draft: { ne: true }
+        }
+      }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           fields {
@@ -63,5 +73,21 @@ export const query = graphql`
     }
   }
 `;
+
+CategoryTemplate.propTypes = {
+  data: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    allMarkdownRemark: PropTypes.any.isRequired,
+  }).isRequired,
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    prevPagePath: PropTypes.string.isRequired,
+    nextPagePath: PropTypes.string.isRequired,
+    hasPrevPage: PropTypes.bool.isRequired,
+    hasNextPage: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default CategoryTemplate;

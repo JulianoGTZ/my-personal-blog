@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -9,11 +12,20 @@ const PageTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
   const { frontmatter } = data.markdownRemark;
-  const { title: pageTitle, description: pageDescription, socialImage } = frontmatter;
-  const metaDescription = pageDescription !== null ? pageDescription : siteSubtitle;
+  const {
+    title: pageTitle,
+    description: pageDescription,
+    socialImage,
+  } = frontmatter;
+  const metaDescription =
+    pageDescription !== null ? pageDescription : siteSubtitle;
 
   return (
-    <Layout title={`${pageTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage}>
+    <Layout
+      title={`${pageTitle} - ${siteTitle}`}
+      description={metaDescription}
+      socialImage={socialImage}
+    >
       <Sidebar />
       <Page title={pageTitle}>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />
@@ -36,5 +48,12 @@ export const query = graphql`
     }
   }
 `;
+
+PageTemplate.defaultProps = {
+  data: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    allMarkdownRemark: PropTypes.any.isRequired,
+  }).isRequired,
+};
 
 export default PageTemplate;
