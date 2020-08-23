@@ -9,7 +9,9 @@ module.exports = async (graphql, actions) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
+        filter: {
+          frontmatter: { template: { eq: "post" }, draft: { ne: true } }
+        }
       ) {
         group(field: frontmatter___category) {
           fieldValue
@@ -26,7 +28,7 @@ module.exports = async (graphql, actions) => {
     for (let i = 0; i < numPages; i += 1) {
       createPage({
         path: i === 0 ? categorySlug : `${categorySlug}/page/${i}`,
-        component: path.resolve('./src/templates/category-template.js'),
+        component: path.resolve('./src/templates/category-template.jsx'),
         context: {
           category: category.fieldValue,
           currentPage: i,
