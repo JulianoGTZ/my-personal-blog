@@ -8,7 +8,7 @@
     "build": "yarn run clean && gatsby build",
     "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public",
     "clean": "rimraf .cache public",
-    "lint": "concurrently \"yarn run lint:js\"",
+    "lint": "eslint --cache --ext .js,.jsx .",
     "test": "jest --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js"
@@ -88,7 +88,7 @@
     "@babel/plugin-proposal-optional-chaining": "7.8.3",
     "@babel/plugin-transform-flow-strip-types": "^7.8.3",
     "@babel/preset-env": "7.8.7",
-    "@babel/preset-react": "7.8.3",
+    "@babel/preset-react": "^7.10.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "25.1.0",
