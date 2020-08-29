@@ -7,15 +7,16 @@ import Layout from './Layout';
 describe('Layout', () => {
   const props = {
     ...siteMetadata,
-    children: 'test',
+    children: <div>some content</div>,
     description: 'test',
     title: 'test',
+    socialImage: 'some-path.jpg',
   };
 
   beforeEach(() => {
     StaticQuery.mockImplementationOnce(
       ({ render }) => render(props),
-      useStaticQuery.mockReturnValue(props),
+      useStaticQuery.mockReturnValue(props)
     );
   });
 

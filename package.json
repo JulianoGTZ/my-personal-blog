@@ -1,21 +1,20 @@
 {
-  "version": "3.0.3",
-  "name": "gatsby-starter-lumen",
-  "description": "A minimal, lightweight and mobile-first starter for creating blazing-fast static blogs",
+  "version": "1.2",
+  "name": "juliano-lima-personal-blog",
+  "description": "My personal blog, with my knowledge translated into markdown, html, gifs and javascript",
   "main": "n/a",
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
     "build": "yarn run clean && gatsby build",
     "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public",
     "clean": "rimraf .cache public",
-    "lint:js": "eslint --cache --ext .js,.jsx .",
-    "lint": "concurrently \"yarn run lint:js\"",
+    "lint": "eslint --cache --ext .js,.jsx .",
     "test": "jest --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js"
   },
-  "repository": "https://github.com/alxshelepenok/gatsby-starter-lumen",
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
+  "repository": "https://github.com/JulianoGTZ/juliano-lima-personal-blog",
+  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>, Juliano Lima <julianodgtz@gmail.com>",
   "license": "MIT",
   "keywords": [
     "gatsby",
@@ -78,18 +77,17 @@
     "postcss-pxtorem": "4.0.1",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "16.13.1",
     "react-disqus-comments": "^1.4.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "16.13.1",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.8.7",
     "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/plugin-proposal-optional-chaining": "7.8.3",
-    "@babel/plugin-transform-flow-strip-types": "^7.8.3",
     "@babel/preset-env": "7.8.7",
-    "@babel/preset-react": "7.8.3",
+    "@babel/preset-react": "^7.10.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "25.1.0",
@@ -110,9 +108,6 @@
     "jest": "25.1.0",
     "jest-cli": "25.1.0",
     "react-test-renderer": "16.12.0",
-    "rimraf": "3.0.1",
-    "stylelint": "13.0.0",
-    "stylelint-config-recommended-scss": "4.2.0",
-    "stylelint-scss": "3.14.2"
+    "rimraf": "3.0.1"
   }
 }

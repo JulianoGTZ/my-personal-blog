@@ -29,7 +29,10 @@ const Layout = ({ children, title, description, socialImage }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   socialImage: PropTypes.string.isRequired,
