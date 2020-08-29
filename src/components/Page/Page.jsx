@@ -7,7 +7,7 @@ const Page = ({ title, children }) => {
 
   useEffect(() => {
     pageRef.current.scrollIntoView();
-  });
+  }, []);
 
   return (
     <div ref={pageRef} className={styles.page}>
@@ -19,9 +19,16 @@ const Page = ({ title, children }) => {
   );
 };
 
+Page.defaultProps = {
+  children: null,
+};
+
 Page.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 export default Page;

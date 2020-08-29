@@ -48,8 +48,8 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
-  prevPagePath: PropTypes.bool.isRequired,
-  nextPagePath: PropTypes.bool.isRequired,
+  prevPagePath: PropTypes.string.isRequired,
+  nextPagePath: PropTypes.string.isRequired,
   hasNextPage: PropTypes.bool.isRequired,
   hasPrevPage: PropTypes.bool.isRequired,
 };

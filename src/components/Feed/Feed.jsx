@@ -47,25 +47,26 @@ const Feed = ({ edges }) => (
   </div>
 );
 
-Feed.propTypes = {
-  edges: PropTypes.arrayOf({
-    node: PropTypes.shape({
-      fields: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-        tagSlugs: PropTypes.string.isRequired,
-      }),
-      frontmatter: PropTypes.shape({
-        date: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-        tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-        title: PropTypes.string.isRequired,
-      }),
-      id: PropTypes.string.isRequired,
-      html: PropTypes.string.isRequired,
+const edge = PropTypes.shape({
+  node: PropTypes.shape({
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+      tagSlugs: PropTypes.arrayOf(PropTypes.string).isRequired,
     }),
-  }).isRequired,
+    frontmatter: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+    id: PropTypes.string.isRequired,
+    html: PropTypes.string.isRequired,
+  }),
+});
+
+Feed.propTypes = {
+  edges: PropTypes.arrayOf(edge).isRequired,
 };
 
 export default Feed;

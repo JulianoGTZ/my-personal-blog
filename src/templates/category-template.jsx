@@ -28,7 +28,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
+      <Sidebar isIndex={false} />
       <Page title={category}>
         <Feed edges={edges} />
         <Pagination
