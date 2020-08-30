@@ -1,18 +1,26 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Icon from './Icon';
 
 describe('Icon', () => {
   const props = {
-    name: 'test',
+    name: 'some cool icon name',
     icon: {
       viewBox: '0 0 0 0',
       path: '',
     },
   };
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<Icon {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Should show the right name', () => {
+    const { getByText } = render(<Icon {...props} />);
+    getByText(props.name);
+  });
+
+  it('Should show a svg', () => {
+    const { container } = render(<Icon {...props} />);
+    const iconSvg = container.querySelector(
+      `[viewBox="${props.icon.viewBox}"]`
+    );
+    expect(iconSvg).not.toBe(null);
   });
 });
