@@ -4,7 +4,7 @@ import Page from './Page';
 
 describe('Page', () => {
   const props = {
-    children: <div> some content very important.</div>,
+    children: <div> some very important subject like Clojure.</div>,
     title: 'Amazing title',
   };
 
@@ -35,6 +35,6 @@ describe('Page', () => {
 
   it('Should show the page body', () => {
     const { getByText } = render(<Page {...props} />);
-    getByText('some content very important.');
+    getByText('some very important subject like Clojure.');
   });
 });
