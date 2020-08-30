@@ -13,6 +13,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
     '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/jest/__mocks__/file-mock.js',
+    'use-site-metadata': '<rootDir>/jest/__mocks__/hooks/use-site-metadata.js',
   },
   testPathIgnorePatterns: ['node_modules', '.cache', 'public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
