@@ -28,6 +28,10 @@ const Layout = ({ children, title, description, socialImage }) => {
   );
 };
 
+Layout.defaultProps = {
+  socialImage: null,
+};
+
 Layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -35,7 +39,7 @@ Layout.propTypes = {
   ]).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  socialImage: PropTypes.string.isRequired,
+  socialImage: PropTypes.string,
 };
 
 export default Layout;

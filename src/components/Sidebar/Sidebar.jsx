@@ -22,8 +22,12 @@ const Sidebar = ({ isIndex }) => {
   );
 };
 
+Sidebar.defaultProps = {
+  isIndex: false,
+};
+
 Sidebar.propTypes = {
-  isIndex: PropTypes.bool.isRequired,
+  isIndex: PropTypes.bool,
 };
 
 export default Sidebar;
