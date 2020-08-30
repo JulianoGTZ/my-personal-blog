@@ -26,11 +26,9 @@ describe('Author', () => {
     });
 
     it('Should have an alt describing the image', () => {
-      const { getByTestId } = render(<Author {...props} />);
-      expect(getByTestId('author-img')).toHaveProperty(
-        'alt',
-        props.author.name
-      );
+      const { getByAltText } = render(<Author {...props} />);
+
+      getByAltText(props.author.name);
     });
   });
 
