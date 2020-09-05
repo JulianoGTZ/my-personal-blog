@@ -1,8 +1,13 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import moment from 'moment';
+import { render, cleanup } from '@testing-library/react';
 import Feed from './Feed';
 
 describe('Feed', () => {
+  beforeEach(() => {
+    cleanup();
+  });
+
   const props = {
     edges: [
       {
@@ -31,8 +36,8 @@ describe('Feed', () => {
             tagSlugs: ['/test-1', '/test-2'],
           },
           frontmatter: {
-            date: '2016-09-01',
-            description: 'test_1',
+            date: '2020-09-05',
+            description: 'Gr',
             category: 'test_1',
             tags: ['test-1', 'test-2'],
             title: 'test_1',
@@ -44,8 +49,56 @@ describe('Feed', () => {
     ],
   };
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<Feed {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Should show the fields', () => {
+    const { getByTestId } = render(<Feed {...props} />);
+    props.edges.forEach((edge, index) => {
+      getByTestId(`edge-field-${index}`);
+    });
+  });
+
+  it('Should show the Meta Ti', () => {
+    const { getByText } = render(<Feed {...props} />);
+    props.edges.forEach((edge) => {
+      getByText(moment(edge.node.frontmatter.date).format('MMMM YYYY'));
+    });
+  });
+
+  it('Should show the a link for each node', () => {
+    const { getByTestId } = render(<Feed {...props} />);
+    props.edges.forEach((edge, index) => {
+      const categorySlugLink = getByTestId(`category-slug-link-${index}`);
+
+      expect(categorySlugLink).toHaveProperty(
+        'href',
+        `http://localhost${edge.node.fields.slug}`
+      );
+      expect(categorySlugLink.textContent).toBe(edge.node.frontmatter.category);
+    });
+  });
+
+  it('Should show a link to "Feed Title"', () => {
+    const { getByTestId } = render(<Feed {...props} />);
+    props.edges.forEach((edge, index) => {
+      const titleLink = getByTestId(`link-title-link-${index}`);
+
+      expect(titleLink).toHaveProperty(
+        'href',
+        `http://localhost${edge.node.fields.slug}`
+      );
+      expect(titleLink.textContent).toBe(edge.node.frontmatter.title);
+    });
+  });
+
+  it('Should show a link to "Read More"', () => {
+    const { getByTestId } = render(<Feed {...props} />);
+    props.edges.forEach((edge, index) => {
+      const categorySlugLink = getByTestId(`link-read-more-${index}`);
+
+      expect(categorySlugLink).toHaveProperty(
+        'href',
+        `http://localhost${edge.node.fields.slug}`
+      );
+      expect(categorySlugLink.textContent).toBe('Read');
+    });
   });
 });

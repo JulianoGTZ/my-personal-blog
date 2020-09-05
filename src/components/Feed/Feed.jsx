@@ -5,12 +5,17 @@ import { Link } from 'gatsby';
 import styles from './Feed.module.scss';
 
 const Feed = ({ edges }) => (
-  <div className={styles.feed}>
-    {edges.map((edge) => (
-      <div className={styles.feed__item} key={edge.node.fields.slug}>
+  <div data-testid="feed" className={styles.feed}>
+    {edges.map((edge, index) => (
+      <div
+        data-testid={`edge-field-${index}`}
+        className={styles.feed__item}
+        key={edge.node.fields.slug}
+      >
         <div className={styles['feed__item-meta']}>
           <time
             className={styles['feed__item-meta-time']}
+            data-testid={`edge-item-meta-time-${index}`}
             dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}
           >
             {moment(edge.node.frontmatter.date).format('MMMM YYYY')}
@@ -19,6 +24,7 @@ const Feed = ({ edges }) => (
           <span className={styles['feed__item-meta-category']}>
             <Link
               to={edge.node.fields.categorySlug}
+              data-testid={`category-slug-link-${index}`}
               className={styles['feed__item-meta-category-link']}
             >
               {edge.node.frontmatter.category}
@@ -29,6 +35,7 @@ const Feed = ({ edges }) => (
           <Link
             className={styles['feed__item-title-link']}
             to={edge.node.fields.slug}
+            data-testid={`link-title-link-${index}`}
           >
             {edge.node.frontmatter.title}
           </Link>
@@ -38,6 +45,7 @@ const Feed = ({ edges }) => (
         </p>
         <Link
           className={styles['feed__item-readmore']}
+          data-testid={`link-read-more-${index}`}
           to={edge.node.fields.slug}
         >
           Read
