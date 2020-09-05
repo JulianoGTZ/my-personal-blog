@@ -1,27 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
-import siteMetadata from '../../../jest/__fixtures__/site-metadata';
+import { render, cleanup } from '@testing-library/react';
 import Layout from './Layout';
 
 describe('Layout', () => {
   const props = {
-    ...siteMetadata,
-    children: <div>some content</div>,
-    description: 'test',
-    title: 'test',
+    children: <div>Some rich content</div>,
+    description: 'A great description wich makes me cry',
+    title: 'Why Corinthians is the best team?',
     socialImage: 'some-path.jpg',
   };
 
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => render(props),
-      useStaticQuery.mockReturnValue(props)
-    );
+    cleanup();
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<Layout {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Should show the content', () => {
+    const { getByTestId, getByText } = render(<Layout {...props} />);
+    getByTestId('layout-image');
+    getByText('Some rich content');
   });
 });

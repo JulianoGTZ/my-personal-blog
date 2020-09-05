@@ -11,7 +11,7 @@ const Layout = ({ children, title, description, socialImage }) => {
   const metaImageUrl = url + withPrefix(metaImage);
 
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} data-testid="layout-image">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
