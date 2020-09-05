@@ -1,14 +1,29 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import moment from 'moment';
+import { render, cleanup } from '@testing-library/react';
 import Meta from './Meta';
 
 describe('Meta', () => {
-  it('renders correctly', () => {
-    const props = {
-      date: '2016-09-01',
-    };
+  const props = {
+    date: '2020-09-03',
+  };
 
-    const tree = renderer.create(<Meta {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  beforeEach(() => {
+    cleanup();
+  });
+
+  it('Should show the date in the right format', () => {
+    const { date } = props;
+    const expectedDateFormat = moment(date).format('D MMM YYYY');
+    const { getByTestId } = render(<Meta {...props} />);
+    const meta = getByTestId('publish-meta');
+
+    expect(meta.textContent).toContain(expectedDateFormat);
+  });
+
+  it('Should show the right status', () => {
+    const { getByTestId } = render(<Meta {...props} />);
+    const meta = getByTestId('publish-meta');
+    expect(meta.textContent).toContain('Published');
   });
 });
