@@ -8,13 +8,14 @@ const Author = () => {
 
   return (
     <div className={styles.author}>
-      <p className={styles.author__bio}>
+      <p className={styles.author__bio} data-testid="author-bio-paragraph">
         {author.bio}
         <a
           className={styles['author__bio-twitter']}
           href={getContactHref('twitter', author.contacts.twitter)}
           rel="noopener noreferrer"
           target="_blank"
+          data-testid="author-bio-twitter"
         >
           <strong>{author.name}</strong>
           on Twitter
