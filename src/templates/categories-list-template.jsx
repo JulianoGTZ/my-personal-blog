@@ -17,9 +17,11 @@ const CategoriesListTemplate = () => {
         <ul>
           {categories.map((category) => (
             <li key={category.fieldValue}>
-              <Link to={`/category/${kebabCase(category.fieldValue)}/`}>
+              <Link
+                data-testid={`category-${category.fieldValue}`}
+                to={`/category/${kebabCase(category.fieldValue)}/`}
+              >
                 {category.fieldValue}
-                {' '}
                 (
                 {category.totalCount}
                 )
