@@ -13,6 +13,7 @@ const Comments = ({ postTitle, postSlug }) => {
   return (
     <ReactDisqusComments
       shortname={disqusShortname}
+      data-testid="post-comment"
       identifier={postTitle}
       title={postTitle}
       url={url + postSlug}

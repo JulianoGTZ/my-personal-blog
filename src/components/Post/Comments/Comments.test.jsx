@@ -1,24 +1,19 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
+import { render, cleanup } from '@testing-library/react';
 import Comments from './Comments';
-import siteMetadata from '../../../../jest/__fixtures__/site-metadata';
 
 describe('Comments', () => {
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => render(siteMetadata),
-      useStaticQuery.mockReturnValue(siteMetadata),
-    );
+    cleanup();
   });
 
   const props = {
-    postTitle: 'test',
+    postTitle: 'Clojure - the best language ever',
     postSlug: '/test',
   };
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<Comments {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Should render the comments', () => {
+    const { getByTestId } = render(<Comments {...props} />);
+    getByTestId('post-comment');
   });
 });
