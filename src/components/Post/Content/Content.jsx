@@ -14,7 +14,10 @@ const Content = ({ body, title }) => (
 );
 
 Content.propTypes = {
-  body: PropTypes.element.isRequired,
+  body: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.string,
+  ]).isRequired,
   title: PropTypes.string.isRequired,
 };
 
