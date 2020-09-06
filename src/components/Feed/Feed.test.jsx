@@ -56,14 +56,14 @@ describe('Feed', () => {
     });
   });
 
-  it('Should show the Meta Ti', () => {
+  it('Should show the Meta Time', () => {
     const { getByText } = render(<Feed {...props} />);
     props.edges.forEach((edge) => {
       getByText(moment(edge.node.frontmatter.date).format('MMMM YYYY'));
     });
   });
 
-  it('Should show the a link for each node', () => {
+  it('Should show a link for each node', () => {
     const { getByTestId } = render(<Feed {...props} />);
     props.edges.forEach((edge, index) => {
       const categorySlugLink = getByTestId(`category-slug-link-${index}`);
