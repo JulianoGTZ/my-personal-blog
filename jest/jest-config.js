@@ -16,6 +16,7 @@ module.exports = {
     'use-site-metadata': '<rootDir>/jest/__mocks__/hooks/use-site-metadata.js',
     'use-categories-list':
       '<rootDir>/jest/__mocks__/hooks/use-categories-list.js',
+      'use-tags-list':'<rootDir>/jest/__mocks__/hooks/use-tags-list.js',
   },
   testPathIgnorePatterns: ['node_modules', '.cache', 'public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
