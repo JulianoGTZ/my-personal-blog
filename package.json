@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
     "build": "yarn run clean && gatsby build",
-    "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public -b gh-pages  -r https://124c834d94d37271e2bc0a0c27ee91e64fa3cd82@github.com/julianogtz/my-personal-blog.git",
+    "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/julianogtz/my-personal-blog.git",
     "clean": "rimraf .cache public",
     "lint": "eslint --cache --ext .js,.jsx .",
     "test": "jest --config ./jest/jest-config.js",
