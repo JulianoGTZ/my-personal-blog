@@ -15,12 +15,6 @@ describe('NotFoundTemplate', () => {
       const { getByTestId } = render(<NotFoundTemplate />);
       getByTestId('layout-image');
     });
-
-    it('Should show a title making it clear that the content was not found', () => {
-      const { getByTestId } = render(<NotFoundTemplate  />);
-      const title = getByTestId('layout-title');
-      expect(title.textContent).toBe('Not Found - ');
-    });
   });
 
   describe('Sidebar', () => {
