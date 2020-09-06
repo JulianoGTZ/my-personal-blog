@@ -108,7 +108,6 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "25.1.0",
     "jest-cli": "25.1.0",
-    "react-test-renderer": "16.12.0",
     "rimraf": "3.0.1"
   }
 }
