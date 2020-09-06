@@ -1,6 +1,6 @@
 module.exports = {
   url: 'https://julianolima.github.io/',
-  pathPrefix: '/',
+  pathPrefix: 'my-personal-blog/',
   title: 'Blog by Juliano Lima',
   subtitle: 'Engenheiro de software, cientista da computação, sommelier de desenhos e comentarista amador de futebol.',
   copyright: '© All rights reserved.',
