@@ -22,6 +22,7 @@ const CategoriesListTemplate = () => {
                 to={`/category/${kebabCase(category.fieldValue)}/`}
               >
                 {category.fieldValue}
+                {' '}
                 (
                 {category.totalCount}
                 )
