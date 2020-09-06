@@ -14,22 +14,22 @@ const Post = ({ post }) => {
   const { tags, title, date } = post.frontmatter;
 
   return (
-    <div className={styles.post}>
-      <Link className={styles['post__home-button']} to="/">
+    <div className={styles.post} data-testid="post-page">
+      <Link className={styles['post__home-button']} to="/" data-testid="post-header">
         All Articles
       </Link>
 
-      <div className={styles.post__content}>
+      <div className={styles.post__content} data-testid="post-content-container">
         <Content body={html} title={title} />
       </div>
 
-      <div className={styles.post__footer}>
+      <div className={styles.post__footer} data-testid="post-footer">
         <Meta date={date} />
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
         <Author />
       </div>
 
-      <div className={styles.post__comments}>
+      <div className={styles.post__comments} data-testid="post-comments">
         <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
     </div>
@@ -39,14 +39,11 @@ const Post = ({ post }) => {
 Post.propTypes = {
   post: PropTypes.shape({
     fields: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      tagSlugs: PropTypes.string.isRequired,
+      slug: PropTypes.string,
+      tagSlugs: PropTypes.arrayOf(PropTypes.string),
     }),
     frontmatter: PropTypes.shape({
       date: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string).isRequired,
       title: PropTypes.string.isRequired,
     }),
