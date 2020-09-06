@@ -11,8 +11,8 @@ const Page = ({ title, children }) => {
 
   return (
     <div data-testid="page-container" ref={pageRef} className={styles.page}>
-      <div data-testid="page-title" className={styles.page__inner}>
-        {title && <h1 className={styles.page__title}>{title}</h1>}
+      <div className={styles.page__inner}>
+        {title && <h1 data-testid="page-title" className={styles.page__title}>{title}</h1>}
         <div data-testid="page-body" className={styles.page__body}>
           {children}
         </div>
