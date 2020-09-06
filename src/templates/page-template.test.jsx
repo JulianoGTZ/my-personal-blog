@@ -1,6 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
+import { render, cleanup } from '@testing-library/react';
 import PageTemplate from './page-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import markdownRemark from '../../jest/__fixtures__/markdown-remark';
@@ -13,14 +12,48 @@ describe('PageTemplate', () => {
   };
 
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => render(siteMetadata),
-      useStaticQuery.mockReturnValue(siteMetadata),
-    );
+    cleanup();
+    const scrollIntoViewMock = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<PageTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  describe('Layout', () => {
+    it('Should show the Layout container', () => {
+      const { getByTestId } = render(<PageTemplate {...props} />);
+      getByTestId('layout-image');
+    });
+  });
+
+  describe('Sidebar', () => {
+    it('Should show author context', () => {
+      const { getByTestId, getByText, getByAltText } = render(
+        <PageTemplate {...props} />
+      );
+      const { author } = siteMetadata;
+      getByTestId('author');
+      getByText(author.name);
+      getByText(author.bio);
+      getByAltText(author.name);
+    });
+
+    it('Should show contacts', () => {
+      const { getByTestId } = render(<PageTemplate {...props} />);
+      getByTestId('my-contacts');
+    });
+
+    it('Should show copyright', () => {
+      const { copyright } = siteMetadata;
+      const { getByTestId, getByText } = render(<PageTemplate {...props} />);
+  
+      getByTestId('copyright');
+      getByText(copyright);
+    });
+  });
+
+  describe('Page', () => {
+    it('Should show the title', () => {
+      const { getByTestId } = render(<PageTemplate {...props} />);
+      getByTestId('page-container');
+    });
   });
 });
