@@ -24,7 +24,7 @@ const Pagination = ({
   });
 
   return (
-    <div className={styles.pagination}>
+    <div className={styles.pagination} data-testid="pagination">
       <div className={styles.pagination__prev}>
         <Link
           rel="prev"
