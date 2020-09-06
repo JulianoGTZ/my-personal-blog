@@ -1,13 +1,15 @@
 ---
-title: "About me"
+title: "Sobre mim"
 template: "page"
 socialImage: "/media/image-2.jpg"
 ---
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+Olá, meu nome é Juliano Pereira Lima, formado em Ciência da Computação pela UNIVALI, mas com boa parte feita também na UEMS. 
 
-![Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.](/media/image-2.jpg)
+Sou de mato Grosso do Sul, atualmente moro em São Paulo, Capital. 
 
-*Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.*
+Atualmente trabalho no Nubank, como engenheiro de software especificamente com back-end com Clojure :heart:, e muitas outras tecnologias da área.
 
-Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+Particularmente gosto muito da **Ciência** que existe na **computação**. Geralmente procuro através de obras literárias, apresentações, eventos, experimentos próprios e artigos científicos tentar entender um pouco um mais sobre a teoria que rege tudo que está acontecendo digitalmente no mundo.
+
+Os maiores obstáculos que passei profissionalmente atuando com software me levarão a estudar Agilidade. Gosto muito de estudar esse tema, e de alguma forma tentar otimizar os recursos humanos também nos times que faço parte.
