@@ -1,19 +1,53 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
+import { render, cleanup } from '@testing-library/react';
 import NotFoundTemplate from './not-found-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 
 describe('NotFoundTemplate', () => {
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => render(siteMetadata),
-      useStaticQuery.mockReturnValue(siteMetadata),
-    );
+    cleanup();
+    const scrollIntoViewMock = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<NotFoundTemplate />).toJSON();
-    expect(tree).toMatchSnapshot();
+  describe('Layout', () => {
+    it('Should show the Layout container', () => {
+      const { getByTestId } = render(<NotFoundTemplate />);
+      getByTestId('layout-image');
+    });
+
+    it('Should show a title making it clear that the content was not found', () => {
+      const { getByTestId } = render(<NotFoundTemplate  />);
+      const title = getByTestId('layout-title');
+      expect(title.textContent).toBe('Not Found - ');
+    });
+  });
+
+  describe('Sidebar', () => {
+    it('Should show author context', () => {
+      const { getByTestId, getByText, getByAltText } = render(
+        <NotFoundTemplate />
+      );
+      const { author } = siteMetadata;
+      getByTestId('author');
+      getByText(author.name);
+      getByText(author.bio);
+      getByAltText(author.name);
+    });
+    it('Should show copyright', () => {
+      const { copyright } = siteMetadata;
+      const { getByTestId, getByText } = render(<NotFoundTemplate />);
+  
+      getByTestId('copyright');
+      getByText(copyright);
+    });
+  });
+
+  describe('Page', () => {
+    it('Should show NOT FOUND as title', () => {
+      const { getByTestId } = render(<NotFoundTemplate  />);
+      const title = getByTestId('page-title');
+      expect(title.textContent).toBe('NOT FOUND');
+    });
   });
 });
