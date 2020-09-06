@@ -26,7 +26,6 @@ describe('TagTemplate', () => {
     });
   });
 
-
   describe('Sidebar', () => {
     it('Should show author context', () => {
       const { getByTestId, getByText, getByAltText } = render(
