@@ -1,15 +1,25 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import Content from './Content';
 
 describe('Content', () => {
-  it('renders correctly', () => {
-    const props = {
-      title: 'test',
-      body: '<p>test</p>',
-    };
+  const props = {
+    title: 'A great title',
+    body: '<p>A great content.</p>',
+  };
 
-    const tree = renderer.create(<Content {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  beforeEach(() => {
+    cleanup();
+  });
+
+  it('Should show a title', () => {
+    const { getByText } = render(<Content {...props} />);
+    const { title } = props;
+    getByText(title);
+  });
+
+  it('Should show the content on body', () => {
+    const { getByText } = render(<Content {...props} />);
+    getByText('A great content.');
   });
 });

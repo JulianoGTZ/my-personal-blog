@@ -1,25 +1,31 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
+import { render, cleanup } from '@testing-library/react';
 import CategoriesListTemplate from './categories-list-template';
-import siteMetadata from '../../jest/__fixtures__/site-metadata';
-import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
+import categoriesMetadata from '../../jest/__fixtures__/categories-metadata';
 
 describe('CategoriesListTemplate', () => {
-  const props = {
-    ...siteMetadata,
-    ...allMarkdownRemark,
-  };
-
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => render(props),
-      useStaticQuery.mockReturnValue(props),
-    );
+    const scrollIntoViewMock = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
+    cleanup();
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<CategoriesListTemplate />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Should show the layout', () => {
+    const { getByTestId } = render(<CategoriesListTemplate />);
+    getByTestId('layout-image');
+  });
+
+  it('Should show the sidebar', () => {
+    const { getByTestId } = render(<CategoriesListTemplate />);
+    getByTestId('sidebar');
+  });
+
+  it('Should show all of the categories', () => {
+    const { getByTestId, getByText } = render(<CategoriesListTemplate />);
+
+    categoriesMetadata.forEach((category) => {
+      getByTestId(`category-${category.fieldValue}`);
+      getByText(`${category.fieldValue} (${category.totalCount})`);
+    });
   });
 });

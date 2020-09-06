@@ -4,12 +4,17 @@ import { Link } from 'gatsby';
 import styles from './Menu.module.scss';
 
 const Menu = ({ menu }) => (
-  <nav className={styles.menu}>
-    <ul className={styles.menu__list}>
-      {menu.map((item) => (
-        <li className={styles['menu__list-item']} key={item.path}>
+  <nav data-testid="menu-navbar" className={styles.menu}>
+    <ul data-testid="menu-items" className={styles.menu__list}>
+      {menu.map((item, index) => (
+        <li
+          id={`${item.path}-${index}`}
+          className={styles['menu__list-item']}
+          key={item.path}
+        >
           <Link
             to={item.path}
+            data-testid={`menu-list-item-${index}`}
             className={styles['menu__list-item-link']}
             activeClassName={styles['menu__list-item-link--active']}
           >

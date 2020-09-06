@@ -11,7 +11,7 @@ const Sidebar = ({ isIndex }) => {
   const { author, copyright, menu } = useSiteMetadata();
 
   return (
-    <div className={styles.sidebar}>
+    <div className={styles.sidebar} data-testid="sidebar">
       <div className={styles.sidebar__inner}>
         <Author author={author} isIndex={isIndex} />
         <Menu menu={menu} />
@@ -22,8 +22,12 @@ const Sidebar = ({ isIndex }) => {
   );
 };
 
+Sidebar.defaultProps = {
+  isIndex: false,
+};
+
 Sidebar.propTypes = {
-  isIndex: PropTypes.bool.isRequired,
+  isIndex: PropTypes.bool,
 };
 
 export default Sidebar;

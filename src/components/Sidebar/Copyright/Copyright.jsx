@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Copyright.module.scss';
 
 const Copyright = ({ copyright }) => (
-  <div className={styles.copyright}>{copyright}</div>
+  <div data-testid="copyright" className={styles.copyright}>
+    {copyright}
+  </div>
 );
 
 Copyright.propTypes = {

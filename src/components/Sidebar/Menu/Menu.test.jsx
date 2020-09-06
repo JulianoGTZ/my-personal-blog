@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import Menu from './Menu';
 
 describe('Menu', () => {
@@ -16,8 +16,23 @@ describe('Menu', () => {
     ],
   };
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<Menu {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  beforeEach(() => {
+    cleanup();
+  });
+
+  it('Should show a menu navbar', () => {
+    const { getByTestId } = render(<Menu {...props} />);
+    getByTestId('menu-navbar');
+  });
+
+  it('Should render all of the items on Menu', () => {
+    const dataTestIds = ['menu-list-item-0', 'menu-list-item-1'];
+    const { getByTestId } = render(<Menu {...props} />);
+
+    getByTestId('menu-items');
+
+    dataTestIds.forEach((testId, index) => {
+      expect(getByTestId(testId).textContent).toBe(`Item ${index}`);
+    });
   });
 });

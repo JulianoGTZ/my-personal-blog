@@ -10,10 +10,12 @@ const Page = ({ title, children }) => {
   }, []);
 
   return (
-    <div ref={pageRef} className={styles.page}>
+    <div data-testid="page-container" ref={pageRef} className={styles.page}>
       <div className={styles.page__inner}>
-        {title && <h1 className={styles.page__title}>{title}</h1>}
-        <div className={styles.page__body}>{children}</div>
+        {title && <h1 data-testid="page-title" className={styles.page__title}>{title}</h1>}
+        <div data-testid="page-body" className={styles.page__body}>
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -21,10 +23,11 @@ const Page = ({ title, children }) => {
 
 Page.defaultProps = {
   children: null,
+  title: undefined,
 };
 
 Page.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

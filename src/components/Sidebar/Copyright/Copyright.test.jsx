@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Copyright from './Copyright';
 
 describe('Copyright', () => {
   it('renders correctly', () => {
     const props = {
-      copyright: 'copyright',
+      copyright: 'some-copyright',
     };
 
-    const tree = renderer.create(<Copyright {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { getByText } = render(<Copyright {...props} />);
+    getByText(props.copyright);
   });
 });

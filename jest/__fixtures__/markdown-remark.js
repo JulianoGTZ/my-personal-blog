@@ -7,6 +7,7 @@ module.exports = {
         '/test_0',
         '/test_1',
       ],
+      slug: 'test_0',
     },
     frontmatter: {
       date: '2016-09-01',

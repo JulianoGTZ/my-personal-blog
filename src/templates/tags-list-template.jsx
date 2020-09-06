@@ -15,9 +15,9 @@ const TagsListTemplate = () => {
       <Sidebar />
       <Page title="Tags">
         <ul>
-          {tags.map((tag) => (
+          {tags.map((tag, index) => (
             <li key={tag.fieldValue}>
-              <Link to={`/tag/${kebabCase(tag.fieldValue)}/`}>
+              <Link to={`/tag/${kebabCase(tag.fieldValue)}/`} data-testid={`list-template-link-${index}`}>
                 {tag.fieldValue}
                 {' '}
                 (

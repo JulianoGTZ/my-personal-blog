@@ -1,8 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { useStaticQuery, StaticQuery } from 'gatsby';
+import { render, cleanup } from '@testing-library/react';
 import PostTemplate from './post-template';
-import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import markdownRemark from '../../jest/__fixtures__/markdown-remark';
 
 describe('PostTemplate', () => {
@@ -13,16 +11,22 @@ describe('PostTemplate', () => {
   };
 
   beforeEach(() => {
-    StaticQuery.mockImplementationOnce(
-      ({ render }) => (
-        render(siteMetadata)
-      ),
-      useStaticQuery.mockReturnValue(siteMetadata),
-    );
+    cleanup();
+    const scrollIntoViewMock = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<PostTemplate {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  describe('Layout', () => {
+    it('Should show the Layout container', () => {
+      const { getByTestId } = render(<PostTemplate {...props} />);
+      getByTestId('layout-image');
+    });
+  });
+
+  describe('Post', () => {
+    it('Should show the Post container', () => {
+      const { getByTestId } = render(<PostTemplate {...props} />);
+      getByTestId('post-page');
+    });
   });
 });
