@@ -4,13 +4,13 @@ import { Link } from 'gatsby';
 import styles from './Tags.module.scss';
 
 const Tags = ({ tags, tagSlugs }) => (
-  <div className={styles.tags}>
-    <ul className={styles.tags__list}>
+  <div className={styles.tags} data-testid='tags-container'>
+    <ul className={styles.tags__list} data-testid='tags-link-list'>
       {tagSlugs &&
-        tagSlugs.map((slug, i) => (
-          <li className={styles['tags__list-item']} key={tags[i]}>
-            <Link to={slug} className={styles['tags__list-item-link']}>
-              {tags[i]}
+        tagSlugs.map((slug, index) => (
+          <li className={styles['tags__list-item']} key={tags[index]}>
+            <Link to={slug} className={styles['tags__list-item-link']} data-testid={`tag-link-${index}`}>
+              {tags[index]}
             </Link>
           </li>
         ))}
@@ -18,9 +18,13 @@ const Tags = ({ tags, tagSlugs }) => (
   </div>
 );
 
+Tags.defaultProps = { 
+  tagSlugs: undefined,
+};
+
 Tags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tagSlugs: PropTypes.arrayOf(PropTypes).isRequired,
+  tagSlugs: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Tags;
