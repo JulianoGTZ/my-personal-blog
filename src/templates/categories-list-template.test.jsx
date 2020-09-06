@@ -25,7 +25,7 @@ describe('CategoriesListTemplate', () => {
 
     categoriesMetadata.forEach((category) => {
       getByTestId(`category-${category.fieldValue}`);
-      getByText(`${category.fieldValue}(${category.totalCount})`);
+      getByText(`${category.fieldValue} (${category.totalCount})`);
     });
   });
 });
