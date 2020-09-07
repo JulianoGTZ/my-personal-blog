@@ -7,7 +7,7 @@
     "develop": "yarn run clean && gatsby develop",
     "build": "yarn run clean && gatsby build",
     "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d public -b gh-pages",
-    "gh-pages-deploy":"node ./scripts/deploy.js",
+    "gh-pages-deploy": "node ./scripts/deploy.js",
     "clean": "rimraf .cache public",
     "lint": "eslint --cache --ext .js,.jsx .",
     "test": "jest --config ./jest/jest-config.js",
@@ -36,6 +36,7 @@
     "disqus"
   ],
   "dependencies": {
+    "@reach/router": "^1.3.4",
     "autoprefixer": "9.7.4",
     "bluebird": "^3.7.2",
     "classnames": "^2.2.6",

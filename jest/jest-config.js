@@ -17,6 +17,7 @@ module.exports = {
     'use-categories-list':
       '<rootDir>/jest/__mocks__/hooks/use-categories-list.js',
       'use-tags-list':'<rootDir>/jest/__mocks__/hooks/use-tags-list.js',
+      '@reach/router':'<rootDir>/jest/__mocks__/reach-router.js',
   },
   testPathIgnorePatterns: ['node_modules', '.cache', 'public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
