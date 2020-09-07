@@ -18,7 +18,9 @@ const Author = () => {
           data-testid="author-bio-twitter"
         >
           <strong>{author.name}</strong>
-          {' '} on Twitter
+          {' '}
+          {' '}
+          on Twitter
         </a>
       </p>
     </div>

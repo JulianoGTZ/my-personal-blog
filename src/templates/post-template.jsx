@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
+import Seo from '../components/Seo';
 import { useSiteMetadata } from '../hooks';
 
 const PostTemplate = ({ data }) => {
@@ -13,6 +14,7 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage}>
+      <Seo title={siteTitle} description={metaDescription} image={socialImage} article />
       <Post post={data.markdownRemark} />
     </Layout>
   );
