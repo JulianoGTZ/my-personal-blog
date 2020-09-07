@@ -39,6 +39,8 @@
     "bluebird": "^3.7.2",
     "classnames": "^2.2.6",
     "eslint-config-prettier": "^6.11.0",
+    "execa": "^4.0.3",
+    "fs": "^0.0.1-security",
     "gatsby": "^2.19.12",
     "gatsby-link": "^2.2.29",
     "gatsby-plugin-catch-links": "^2.1.25",
