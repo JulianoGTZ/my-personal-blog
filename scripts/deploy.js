@@ -12,7 +12,7 @@ const execa = require("execa");
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
     await execa("rm", ["-rf", folderName]);
-    await execa("git", ["checkout", "-f", "master"]);
+    await execa("git", ["checkout", "--force", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed");
   } catch (e) {
