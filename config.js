@@ -1,6 +1,6 @@
 module.exports = {
   url: 'https://julianogtz.github.io/my-personal-blog/',
-  pathPrefix: '/',
+  pathPrefix: 'my-personal-blog/',
   title: 'Blog by Juliano Lima',
   subtitle:
     'Engenheiro de software, cientista da computação, sommelier de desenhos animados e comentarista amador de futebol.',
