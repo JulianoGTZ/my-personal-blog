@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { render, cleanup } from '@testing-library/react';
+import { formatDate } from '../../utils';
 import Feed from './Feed';
 
 describe('Feed', () => {
@@ -59,7 +60,7 @@ describe('Feed', () => {
   it('Should show the Meta Time', () => {
     const { getByText } = render(<Feed {...props} />);
     props.edges.forEach((edge) => {
-      getByText(moment(edge.node.frontmatter.date).format('MMMM YYYY'));
+      getByText(formatDate({ date: edge.node.frontmatter.date }));
     });
   });
 
