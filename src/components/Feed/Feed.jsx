@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'gatsby';
+import { formatDate } from '../../utils';
 import styles from './Feed.module.scss';
 
 const Feed = ({ edges }) => (
@@ -18,7 +19,7 @@ const Feed = ({ edges }) => (
             data-testid={`edge-item-meta-time-${index}`}
             dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}
           >
-            {moment(edge.node.frontmatter.date).format('MMMM YYYY')}
+            {formatDate({ date: edge.node.frontmatter.date })}
           </time>
           <span className={styles['feed__item-meta-divider']} />
           <span className={styles['feed__item-meta-category']}>
