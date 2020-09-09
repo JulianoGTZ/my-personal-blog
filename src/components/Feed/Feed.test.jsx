@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { render, cleanup } from '@testing-library/react';
 import { formatDate } from '../../utils';
 import Feed from './Feed';
