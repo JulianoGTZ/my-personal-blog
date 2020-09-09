@@ -6,7 +6,7 @@ const execa = require('execa');
     console.log('fetching master');
     await execa('git', ['checkout', '--orphan', 'gh-pages']);
     console.log('Building...');
-    await execa('yarn', ['build']);
+    await execa('yarn', ['build', '--prefix-paths']);
     const folderName = 'build';
     await execa('cp', ['-r', 'public', 'docs']);
     await execa('git', ['add', '--all']);
