@@ -19,7 +19,7 @@ describe('Author', () => {
   it('Should show a link to twitter', () => {
     const { getByTestId } = render(<Author />);
     const authorBioTwitter = getByTestId('author-bio-twitter');
-    expect(authorBioTwitter.textContent).toContain('on Twitter');
+    expect(authorBioTwitter.textContent).toBe('juju  on Twitter');
 
     expect(authorBioTwitter).toHaveProperty(
       'href',
