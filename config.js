@@ -5,7 +5,7 @@ module.exports = {
   subtitle:
     'Engenheiro de software, cientista da computação, sommelier de desenhos animados e comentarista amador de futebol.',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
+  disqusShortname: 'https-julianogtz-github-io-my-personal-blog',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-177351255-1',
   useKatex: false,
