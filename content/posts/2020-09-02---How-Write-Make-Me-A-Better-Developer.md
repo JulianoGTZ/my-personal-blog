@@ -1,5 +1,5 @@
 ---
-title: "Como Aprimorar A Escrita Me torna Um Desenvolvedor De Software Melhor"
+title: "Como Aprimorar A Escrita Me Torna Um Desenvolvedor De Software Melhor"
 date: "2020-09-12T22:40:32.169Z"
 template: "post"
 draft: false
@@ -10,13 +10,11 @@ tags:
   - "Carreira"
   - "Desenvolvimento de Software"
 description: "Como o exercício da escrita em diferentes situações me ajuda a entregar software com mais qualidade."
-socialImage: "my-personal-blog/media/summerios.jpg"
+socialImage: "/media/summerios.jpg"
 ---
 
-<figure>
-	<img src="/media/summerios.jpg" alt="Exemplo de Diagrama feito no Miro"/>
-  	<figcaption>Escrita Cuneiforme criada pelos Sumérios por volta de 3.500 a.C. - Fonte: InfoEscola</figcaption>
-</figure>
+![Escrita Cuneiforme criada pelos Sumérios por volta de 3.500 a.C. - Fonte: InfoEscola](/media/summerios.jpg)
+*Escrita Cuneiforme criada pelos Sumérios por volta de 3.500 a.C. - Fonte: [InfoEscola](https://www.infoescola.com/historia/sumerios/)*
 
 **Olá, bem vindo**. Esse é o post piloto do meu blog, o primeiro artigo de muitos que postarei por aqui :)
 
@@ -24,13 +22,13 @@ Decidi como primeiro assunto abordar a principal motivacao do Blog que é **Tran
 
 ## Todo Programador é um escritor em potencial
 
-Gosto de pensar que assim como os Sumérios na antiga civilização mesopotâmica (atual Iraque) revolucionaram a forma como a sociedade transmitia conhecimento do mundo em que vivia através da invenção da escrita, **os programadores agora são os que revolucionam a escrita sendo os escribas do nosso tempo**. Com a inevitável inserção da tecnologia em todos os âmbitos da sociedade, quem está programando está traduzindo principamente em código os problemas, soluções, anseios e as limitações que estamos vivenciando.
+Gosto de pensar que assim como os Sumérios na antiga civilização mesopotâmica (atual Iraque) revolucionaram a forma como a sociedade transmitia conhecimento **através da invenção da escrita**, **os programadores também estão revolucionando a escrita quase como os escribas do nosso tempo**. Com a inevitável inserção da tecnologia em todos os âmbitos da sociedade, quem está programando está sintentizando em código os problemas, soluções, anseios e as limitações que estamos vivenciando.
 
 <figure>
 	<blockquote>
-		<p>“Só existem duas coisas difíceis em Ciência da Computação: invalidação de cache e escolher nomes das coisas!</p>
+		<p>“Com grandes poderes vêm grandes responsabilidades"</p>
 		<footer>
-			<cite>— Phil Karlton</cite>
+			<cite>— Stan Lee</cite>
 		</footer>
 	</blockquote>
 </figure>
@@ -43,13 +41,13 @@ Como o [Clean Code](https://www.amazon.com.br/Clean-Code-Handbook-Software-Craft
 
 <figure>
 	<blockquote>
-		<p>A habilidade de escrever código que: revele propósito, use nomenclaturas de domínio do negócio, evite informações erradas, faça distinções significativas e tenha nomes passíveis de busca(dentre vários outros fatores de qualidade) vem com muita prática e estudo ao longo anos de experiência com feedback sobre o que você entrega.</p>
+		<p>A habilidade de escrever código que: revele propósito, use nomenclaturas de domínio do negócio, evite informações erradas, faça distinções significativas e tenha nomes passíveis de busca(dentre vários outros fatores de qualidade) vem com muita prática e estudo ao longo anos de experiência acompanhado de feedbacks.</p>
 	</blockquote>
 </figure>
 
 ### Lembre-se que você está escrevendo para outra pessoa ler. Código não é diário.
 
-O exercício de me colocar no lugar de quem vai ler e tentar interpretar me ajuda a encontrar bons pontos de melhoria em tudo que desenvolvo, seja o leitor um colega de trabalho, amiga, professor(a) ou para **meu eu do futuro**.
+O exercício de me colocar no lugar de quem vai ler e tentar interpretar me ajuda a encontrar bons pontos de melhoria em tudo que desenvolvo, seja essa pessoa colega de trabalho, amiga, professora ou **meu eu do futuro**.
 
 ## Desenvolver software não é somente escrever código
 
@@ -76,30 +74,28 @@ Traduzir **problemáticas de desenvolvimento de software para um linguagem mais 
 * O código do sistema está bem ruim, no melhor estilo **GO HORSE**. Vai ser quase impossível adicionar essa nova funcionalidade sem danificar o que existe.
 * Como vou contextualizar o quão díficil está entregar essa funcionalidade de forma *rápida*?
 
-Talvez ao invés de apresentar um trecho de código macarrônico e jogar um monte de conceitos abstrados de tecnologia eu posso fazer um analogia voltado ao cotidiano do quão **complexo está em adicionar essa pecinha no tetris sem ter game over**.
+Talvez ao invés de apresentar um trecho de código macarrônico e jogar um monte de conceitos abstratos de tecnologia eu posso fazer um analogia voltado ao cotidiano do quão **complexo está em adicionar essa pecinha no tetris sem ter game over**.
 
 ![Game over no tetris](https://64.media.tumblr.com/7cc5314d4fa951ea9e6f71edfea74d12/tumblr_mt8fodasxN1qi9hlso1_1280.gif)
 
-Diagramas são bem poderosos para explicar conceitualmente passos necessários e dão uma boa visão de continuidade. Algumas ferramentas como o [Miro](https://miro.com/) provêm um grande leque de diagramas e ferramentas para tornar a apresentação interativa.
+Diagramas são bem poderosos para apresentar ideias complexas de uma forma agnóstica de tecnologia. Algumas ferramentas como o [Miro](https://miro.com/) provêm um grande leque de diagramas e ferramentas para tornar a apresentação interativa.
 
-<figure>
-	<img src="my-personal-blog/media/flow.png" alt="Exemplo de Diagrama feito no Miro"/>
-  	<figcaption>Exemplo de Diagrama feito no Miro</figcaption>
-</figure>
+![Exemplo de Diagrama feito no Miro](/media/flow.png)
+*Exemplo de Diagrama feito no [Miro](https://miro.com)*
 
 <figure>
 	<blockquote>
-		<p>É super importante pedir feedback antes ou depois de escrever para garantir que sua ideia foi bem entendida.</p>
+		<p>Por mais incrível que seu texto pareça é super importante pedir feedback para garantir que sua ideia foi bem entendida.</p>
 	</blockquote>
 </figure>
 
 ### Leitura
 
-Pra mim certamente a leitura é tão importante quanto a prática da escrita. Ler livros e artigos de variados âmbitos me dá muito insumo intelectual para transmitir ideias. Geralmente tento adicionar no meu cinto de utilizada cada analogia ou exemplo que me faz entender algum conceito.
+Pra mim **a leitura é tão importante quanto a prática para escrever bem**. Ler livros e artigos de variados âmbitos me dá muito insumo intelectual para transmitir ideias com diferentes abordagens. Geralmente tento adicionar no meu cinto de utilidades cada analogia ou exemplo que me faz entender algum conceito.
 
 ## Escrever claramente é ainda mais valioso em times distribuídos
 
-Em tempos de trabalho remoto onde temos times distribuídos há uma tendência de muitas reuniões para alinhamentos de tarefas e expectativas. 
+Em tempos de trabalho remoto onde temos times distribuídos há uma tendência natural de muitas reuniões para alinhamentos de tarefas e expectativas, principalmente em lugares que o trabalho remoto estava longe de ser uma realidade.
 
 Sem o contato presencial perdemos alguns elementos de comunicação como linguagem corporal, mas ao mesmo tempo temos mais oportunidades para melhorar a nossa comunicação escrita. Um texto bem conciso pode te salvar de longas reuniões, longas contextualizações e **pode salvar muito do seu tempo de foco no dia**.
 
@@ -107,19 +103,19 @@ Escrever concisamente a descrição do reunião para os participantes ou estress
 
 ## Tudo isso me faz desenvolver melhor
 
-Eu percebo que quanto mais eu melhoro a minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
+Eu percebo que quanto ao tentar aprimorar minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
 
 Nem toda a escrita precisa ser em artigos, blogs e revistas. Ela pode começar:
 * nos canais de comunicação do seu time.
 * No pull-request que você está trabalhando 
 * Na mensagens de commit 
-* No README do projeto em que você está trabalhando. 
+* No README do projeto em que você está trabalhando.
+* ~~Em uma discussão no grupo de Whatsapp da família~~
 
-**A sua escrita está ajudando ou atrapalhando?**
 
 ## Para estudar mais
 
-Espero que você tenha gostado desse primeiro artigo, eu gostei muito de escrever. Vou deixar alguns links interesantes que utilizei como base para o artigo.
+Espero que você tenha gostado desse primeiro artigo, eu gostei muito de escrever. Vou deixar alguns links interesantes que utilizei como base para o artigo. Em breve volto com mais novidades.
 
 * [Guia de Comunicação Interna do BaseCamp](https://basecamp.com/guides/how-we-communicate)
 * [Podcast Lambda3 - Comunicação Não Violenta](https://www.lambda3.com.br/2017/02/podcast-31-comunicacao-nao-violenta/)
