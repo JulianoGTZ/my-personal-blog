@@ -53,7 +53,7 @@ O exercício de me colocar no lugar de quem vai ler e tentar interpretar me ajud
 
 Escrever código é um grande desafio e requer muito estudo técnico pra usufruir do máximo da linguagem. *Mas programar é só codificar?*
 
-Na minha opinião, **não**. Desenvolver software não é só sobre programar, **mas também é entender a problemática que vou tentar resolver, para resolver bem**. Trazendo um pouco de teoria dos conjuntos o programador está na **intersecção** entre o mundo concreto dos negócios e o mundo abstrato das implementações de de software.
+Na minha opinião, **não**. Desenvolver software não é só sobre programar, **mas também é entender a problemática que vou tentar resolver, para resolver bem**. Trazendo um pouco de teoria dos conjuntos o programador está na **intersecção** entre o mundo concreto dos negócios e o mundo abstrato das implementações de software.
 
 ![Intersecção entre desenvolvedor de software com o mundo dos negócios e tecnologia](/media/developer-intersection.png)
 
