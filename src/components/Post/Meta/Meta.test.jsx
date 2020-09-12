@@ -1,6 +1,6 @@
 import React from 'react';
-import moment from 'moment';
 import { render, cleanup } from '@testing-library/react';
+import { formatDate } from '../../../utils';
 import Meta from './Meta';
 
 describe('Meta', () => {
@@ -14,7 +14,7 @@ describe('Meta', () => {
 
   it('Should show the date in the right format', () => {
     const { date } = props;
-    const expectedDateFormat = moment(date).format('D MMM YYYY');
+    const expectedDateFormat = formatDate({ date, mask: 'D MMM YYYY'});
     const { getByTestId } = render(<Meta {...props} />);
     const meta = getByTestId('publish-meta');
 
@@ -24,6 +24,6 @@ describe('Meta', () => {
   it('Should show the right status', () => {
     const { getByTestId } = render(<Meta {...props} />);
     const meta = getByTestId('publish-meta');
-    expect(meta.textContent).toContain('Published');
+    expect(meta.textContent).toBe("Publicado em 3 set 2020");
   });
 });

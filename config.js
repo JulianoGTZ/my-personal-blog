@@ -3,7 +3,7 @@ module.exports = {
   pathPrefix: 'my-personal-blog/',
   title: 'Blog by Juliano Lima',
   subtitle:
-    'Engenheiro de software, cientista da computação, sommelier de desenhos animados e comentarista amador de futebol.',
+    'Engenheiro de software, Cientista da computação, Analista de desenhos animados e Comentarista amador de futebol.',
   copyright: '© All rights reserved.',
   disqusShortname: 'https-julianogtz-github-io-my-personal-blog',
   postsPerPage: 4,
@@ -27,7 +27,7 @@ module.exports = {
     name: 'Juliano Lima',
     photo: '/photo.png',
     bio:
-      'Engenheiro de software, cientista da computação, sommelier de desenhos animados e comentarista amador de futebol.',
+      'Engenheiro de software, Cientista da computação, Analista de desenhos animados e Comentarista amador de futebol.',
     contacts: {
       email: '',
       facebook: 'juliano.gutierrez.92',
