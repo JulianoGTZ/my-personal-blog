@@ -69,7 +69,7 @@ Traduzir **problemáticas de desenvolvimento de software para um linguagem mais 
 
 ### Elementos Visuais
 
-### Imagine o seguinte cenário:
+### Imagine o seguinte cenário hipotético:
 * Preciso adicionar uma nova funcionalidade em um sistema o mais rápido possível. Essa funcionalidade será utilizada como argumento de venda para um cliente que está pra fechar contrato.
 * O código do sistema está bem ruim, no melhor estilo **GO HORSE**. Vai ser quase impossível adicionar essa nova funcionalidade sem danificar o que existe.
 * Como vou contextualizar o quão díficil está entregar essa funcionalidade de forma *rápida*?
@@ -99,11 +99,11 @@ Em tempos de trabalho remoto onde temos times distribuídos há uma tendência n
 
 Sem o contato presencial perdemos alguns elementos de comunicação como linguagem corporal, mas ao mesmo tempo temos mais oportunidades para melhorar a nossa comunicação escrita. Um texto bem conciso pode te salvar de longas reuniões, longas contextualizações e **pode salvar muito do seu tempo de foco no dia**.
 
-Escrever concisamente a descrição do reunião para os participantes ou estressar alguns assuntos assíncronamente para uma eventual reunião ser mais produtiva tem sido bem efetivo pra mim.
+Escrever concisamente a descrição da reunião para os participantes ou estressar alguns assuntos assíncronamente para uma eventual reunião ser mais produtiva tem sido bem efetivo pra mim.
 
 ## Tudo isso me faz desenvolver melhor
 
-Eu percebo que quanto ao tentar aprimorar minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
+Eu percebo que ao tentar aprimorar minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
 
 Nem toda a escrita precisa ser em artigos, blogs e revistas. Ela pode começar:
 * nos canais de comunicação do seu time.
@@ -111,7 +111,6 @@ Nem toda a escrita precisa ser em artigos, blogs e revistas. Ela pode começar:
 * Na mensagens de commit 
 * No README do projeto em que você está trabalhando.
 * ~~Em uma discussão no grupo de Whatsapp da família~~
-
 
 ## Para estudar mais
 
