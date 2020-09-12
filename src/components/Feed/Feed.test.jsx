@@ -98,7 +98,7 @@ describe('Feed', () => {
         'href',
         `http://localhost${edge.node.fields.slug}`
       );
-      expect(categorySlugLink.textContent).toBe('Read');
+      expect(categorySlugLink.textContent).toBe('Ver Mais');
     });
   });
 });
