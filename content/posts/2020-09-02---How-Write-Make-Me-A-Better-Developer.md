@@ -67,16 +67,17 @@ Muitas vezes como desenvolvedor preciso sintetizar conteúdos totalmente complex
 
 Traduzir **problemáticas de desenvolvimento de software para um linguagem mais acessível é uma tarefa desafiadora, mas não impossível**. O uso de analogias é muito poderoso para essas situações.
 
-### Elementos Visuais
+### Elementos Visuais e Analogias > Jargões
 
-### Imagine o seguinte cenário hipotético:
-* Preciso adicionar uma nova funcionalidade em um sistema o mais rápido possível. Essa funcionalidade será utilizada como argumento de venda para um cliente que está pra fechar contrato.
-* O código do sistema está bem ruim, no melhor estilo **GO HORSE**. Vai ser quase impossível adicionar essa nova funcionalidade sem danificar o que existe.
-* Como vou contextualizar o quão díficil está entregar essa funcionalidade de forma *rápida*?
+Desenvolvedores de software em geral possuem um dialeto próprio repleto de siglas como: *Docker*, *Kubernetes*, *Git*, *Deploy*, *ETL*, dentre muitas outras. Essa comunicação é extremamente eficiente entre os iniciados desse idioma mas **é extremante complexa pra quem não é**. É bem importante entender quem é o seu público-alvo e se há familiaridade dessas *buzzwords*.
 
-Talvez ao invés de apresentar um trecho de código macarrônico e jogar um monte de conceitos abstratos de tecnologia eu posso fazer um analogia voltado ao cotidiano do quão **complexo está em adicionar essa pecinha no tetris sem ter game over**.
+Uma alternativa são as analogias. Elas são extremamente efetivas para fazer termos estranhos se tornarem famíliares por abrir um paralelo com algo da realidade da pessoa. 
 
-![Game over no tetris](https://64.media.tumblr.com/7cc5314d4fa951ea9e6f71edfea74d12/tumblr_mt8fodasxN1qi9hlso1_1280.gif)
+<figure>
+	<blockquote>
+		<p>Falando sobre custos a computação em nuvem é como conectar-se a uma rede elétrica central em vez de produzir minha própria energia. Eu só preciso pagar o que eu consumo e não me preocupo diretamente em como a energia está sendo distribuída</p>
+	</blockquote>
+</figure>
 
 Diagramas são bem poderosos para apresentar ideias complexas de uma forma agnóstica de tecnologia. Algumas ferramentas como o [Miro](https://miro.com/) provêm um grande leque de diagramas e ferramentas para tornar a apresentação interativa.
 
