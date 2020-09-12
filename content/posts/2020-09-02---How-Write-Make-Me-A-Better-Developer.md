@@ -10,7 +10,7 @@ tags:
   - "Carreira"
   - "Desenvolvimento de Software"
 description: "Como o exercício da escrita em diferentes situações me ajuda a entregar software com mais qualidade."
-socialImage: "/media/image-0.jpg"
+socialImage: "/media/my-personal-blog/summerios.jpg"
 ---
 
 <figure>
@@ -83,7 +83,7 @@ Talvez ao invés de apresentar um trecho de código macarrônico e jogar um mont
 Diagramas são bem poderosos para explicar conceitualmente passos necessários e dão uma boa visão de continuidade. Algumas ferramentas como o [Miro](https://miro.com/) provêm um grande leque de diagramas e ferramentas para tornar a apresentação interativa.
 
 <figure>
-	<img src="/media/flow.png" alt="Exemplo de Diagrama feito no Miro"/>
+	<img src="my-personal-blog/media/flow.png" alt="Exemplo de Diagrama feito no Miro"/>
   	<figcaption>Exemplo de Diagrama feito no Miro</figcaption>
 </figure>
 
