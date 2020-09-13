@@ -65,13 +65,11 @@ Muitas vezes como desenvolvedor preciso sintetizar conteúdos totalmente complex
 
 ![Explique para mim como se seu fosse uma criança de 4 anos](https://media.giphy.com/media/nuuS1IlKqd2dq/giphy.gif)
 
-Traduzir **problemáticas de desenvolvimento de software para um linguagem mais acessível é uma tarefa desafiadora, mas não impossível**. O uso de analogias é muito poderoso para essas situações.
-
 ### Elementos Visuais e Analogias > Jargões
 
 Desenvolvedores de software em geral possuem um dialeto próprio repleto de siglas como: *Docker*, *Kubernetes*, *Git*, *Deploy*, *ETL*, dentre muitas outras. Essa comunicação é extremamente eficiente entre os iniciados desse idioma mas **é extremante complexa pra quem não é**. É bem importante entender quem é o seu público-alvo e se há familiaridade dessas *buzzwords*.
 
-Uma alternativa são as analogias. Elas são extremamente efetivas para fazer termos estranhos se tornarem famíliares por abrir um paralelo com algo da realidade da pessoa. 
+As analogias são uma ótima alternativa para ajudar a materializar conceitos complexos. Elas são extremamente efetivas para fazer termos estranhos se tornarem famíliares por abrir um paralelo com algo da realidade da pessoa. 
 
 <figure>
 	<blockquote>
@@ -107,9 +105,9 @@ Escrever concisamente a descrição da reunião para os participantes ou estress
 Eu percebo que ao tentar aprimorar minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
 
 Nem toda a escrita precisa ser em artigos, blogs e revistas. Ela pode começar:
-* nos canais de comunicação do seu time.
+* Nos canais de comunicação do seu time
 * No pull-request que você está trabalhando 
-* Na mensagens de commit 
+* Na mensagem de commit 
 * No README do projeto em que você está trabalhando.
 * ~~Em uma discussão no grupo de Whatsapp da família~~
 
