@@ -1,4 +1,4 @@
-## Meu Blog [![CircleCI](https://circleci.com/gh/JulianoGTZ/juliano-lima-personal-blog.svg?style=svg)](https://circleci.com/gh/JulianoGTZ/juliano-lima-personal-blog)
+## Meu Blog
 
 Olá galera :tada:
 
