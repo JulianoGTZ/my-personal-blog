@@ -128,7 +128,7 @@ Podemos observar que o **nó-folha** (o nó na extremidade da árvore) sempre se
 
 ![Documentação do Git](https://git-scm.com/book/en/v2/images/data-model-3.png)
 
-Conforme é mostrado na fígura apresentada no início do artigo, nós estamos sempre gerando novas árvores a cada commit. Como é uma estrutura que utiliza funções determinísticas e que qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do Git. Fez mais sentido agora o nome **branch**, não?
+Conforme é mostrado na figura apresentada no início do artigo, estamos sempre gerando novas árvores a cada commit. Como estamos trabalhando em um sistema que utiliza funções determinísticas onde que qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do nossos arquivos. Fez mais sentido agora o nome **branch**, não?
 
 É interessante saber também que o git possuí um sistema de **garbage-collector**. O objetivo é remover arquivos desnecessários de branches antigos que já não fazem mais sentido no repositório. Mas como o Git avalia isso? 
 
@@ -142,7 +142,7 @@ Se você já viu algum conteúdo sobre programação funcional já deve ter lido
 
 Calma, não é exatamente disso que imutabilidade trata. Na verdade, o conceito de imutabilidade é sobre deixar acessível um determinado valor mesmo que a sua referência direta tenha mudado. E sobre deixar um valor específico ainda acessível para computações que precisem enxergar aquele valor futuramente.
 
-O que isso na prática quer dizer? 
+Na prática isso quer dizer o quê? 
 
 Os comandos que existem para alteração de commits como **git rebase** ou **git ammend** na prática reescrevem commits, e não os altera diretamente. Estamos definindo ao reescrever um novo commit atributos como: novo timestamp, novo autor ou novas alterações nos **blobs** e por consequências nas **trees**.
 
