@@ -9,7 +9,7 @@ tags:
   - "Git"
   - "Estruturas de dados"
   - "Deep Dive"
-description: "Como o Git salva nossos arquivos? Em quais estruturas de dados os nossosa arquivos são persistidos"
+description: "Como o Git salva nossos arquivos? Em quais estruturas de dados os nossos arquivos são persistidos? Vamos entender melhor como o Git dispõe seus dados explorando as estruturas de dados existentes por baixo do capô"
 socialImage: "/media/git-database-flow.png"
 ---
 
@@ -155,9 +155,9 @@ Não estamos fazendo uma alteração clássica de valor de uma variável como na
 Tem bem mais conteúdo sobre como funciona o git internamente como: Branchs, Tags, Merge vs Rebase, as três áreas do Git, Fast-Foward, HEAD..Prometo trazer isso em futuros artigos.
 
 Deixo algumas recomendações de conteúdo caso você queira entender mais a fundo as referências de estudo que existem nesse artigo:
-* [O livro Git PRO - Gratuíto online](https://git-scm.com/book/en/v2)
-* [Vídeo do Fabio Akita, explicando fundamentos de GIT](https://www.youtube.com/watch?v=6Czd1Yetaac&t=10s)
+* [O livro Git PRO - Gratuito online](https://git-scm.com/book/en/v2)
+* [Vídeo do Fabio Akita - Entendendo GIT | (não é um tutorial!)](https://www.youtube.com/watch?v=6Czd1Yetaac&t=10s)
 * [Vídeo do Paolo Perrota explicando como o Git funciona](https://www.youtube.com/watch?v=nHkLxts9Mu4)
-* [Curso fantástisco do Pluralsight](https://www.pluralsight.com/courses/how-git-works)
+* [Curso How Git Works - Pluralsight](https://www.pluralsight.com/courses/how-git-works)
 
 *See you later o/*
