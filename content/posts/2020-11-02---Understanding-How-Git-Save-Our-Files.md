@@ -2,7 +2,7 @@
 title: "As estruturas de dados por trás do git"
 date: "2020-11-02T22:40:32.169Z"
 template: "post"
-draft: false
+draft: true
 slug: "as-estruturas-de-dados-por-tras-do-git"
 category: "Git"
 tags:
