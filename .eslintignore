@@ -1,3 +1,4 @@
 /public/*
 /node_modules/*
 /scripts/*
+.DS_Store
