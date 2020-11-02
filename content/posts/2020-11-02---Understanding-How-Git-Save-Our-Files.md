@@ -9,7 +9,7 @@ tags:
   - "Git"
   - "Estruturas de dados"
   - "Deep Dive"
-description: "Como o Git salva nossos arquivos? Como ele entende exatamente que mudanças fazemos? Por que tantos hashes?"
+description: "Como o Git salva nossos arquivos? Em quais estruturas de dados os nossosa arquivos são persistidos"
 socialImage: "/media/git-database-flow.png"
 ---
 
@@ -19,6 +19,7 @@ socialImage: "/media/git-database-flow.png"
 Você já se perguntou como o Git persiste nossos arquivos? Como ele consegue lidar com tantos arquivos de forma distribuída? Embora seja praticamente invisível essa persistência possuí muitas particularidades interessantes pra quem gosta de **estrutura de dados**.
 
 Vamos entender como funciona?
+
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/4k5ferlxtghuylh63qrk.gif)
 
 <figure>
@@ -33,11 +34,11 @@ Vamos entender como funciona?
 
 Segunda a própria documentação o Git é um "content-addressable filesystem", o que na prática se traduz em um clássica estrutura associativa de chave e valor.
 
-Na ciência da computação há muitas estruturas associativas como: arrays associativos, mapas, tabela de símbolos ou dicionários. Conceitualmente estamos falando de uma estrutura de dados abstrata composta de pares de chave e valor, onde uma determinada chave referencia um valor pelo menos uma vez. 
+Na ciência da computação existem muitas estruturas associativas como: arrays associativos, mapas, tabela de símbolos ou dicionários. Conceitualmente estamos falando de uma estrutura de dados abstrata composta de pares de chave e valor, onde uma determinada chave referencia um valor pelo menos uma vez. 
 
 Embora a matemática seja parte integrante da computação, o termo **associação não tem nada a ver com a propriedade de associação da matemática ou de lógica propositiva**.
 
-Isso quer dizer o Git consegue consegue buscar um elemento na sua base de dados similar a forma que buscamos um significado de uma palavra em um dicionário. 
+Metaforicamente é como se o Git consegue conseguisse buscar um elemento na sua base de dados similar a forma que buscamos um significado de uma palavra em um dicionário. 
 
 **Mas o que git associa? por que termos ele busca?** 
 
@@ -45,13 +46,13 @@ Isso quer dizer o Git consegue consegue buscar um elemento na sua base de dados 
 
 O git se guia por hashes. Podemos ver isso ao executar um **git-log** e ver vários deles atribuídos a commits.
 
-**[adicionar imagem aqui]**
+![Figura do Git Log com muitos commits](/media/hashes-everywhere.jpg)
 
-Conceituando: Um hash é uma string de comprimento fixo calculado por algum algoritmo especialista nisso(como MD5, SHA1) onde o objetivo é ter um resultado único respectivo a um determinado parâmetro de entrada.
+Conceituando: Um hash é uma string de comprimento fixo calculado por algum algoritmo especialista nisso(como MD5, SHA1) onde o objetivo é ter um resultado único respectivo aos parâmetros de entrada.
 
 No caso do git essas chaves podem ser geradas a partir de qualquer sequência de bytes oriundo de qualquer tipo de arquivo. Para cada uma dessas sequências é calculada uma chave do tipo [SHA1](https://en.wikipedia.org/wiki/SHA-1). 
 
-A gente pode brincar com esse algoritmo. Basta executar em um terminal o seguinte comando:
+A gente pode brincar com esse algoritmo de geração de chaves. Basta executar em um terminal o seguinte comando:
 
 ```bash
 $ echo "Artigo da hora" | git hash-object --stdin
@@ -65,26 +66,27 @@ E o resultado é sempre o mesmo:
 
 > Precisei utilizar o *echo*, *stdin* e o *|* porque estamos somente utilizando o algoritmo, mas não operando sobre uma sequência de bytes já conhecida pelo git, como um arquivo commitado. Dessa forma estamos enviando uma stream de bytes para o git **hash-object** criptografar
 
-O resultado da função é determínistico, ou seja, dado o mesmo input a função retorna sempre o mesmo resultado. Essa é a forma de garantir que cada mudança no seu repositório mapeada pelo git seja exclusiva ao que de fato foi alterado.
+O resultado da função é determínistico, ou seja, dado o mesmo input a função retorna sempre o mesmo resultado. Esse é um dos mecanismo que ajuda à garantir que cada mudança no seu repositório mapeada pelo git seja respectiva ao que de fato foi alterado.
 
 ## Commits
 
-Para falarmos sobre a próxima estrutura de dados do Git vamos precisar entender um pouco mais sobre a estrutura dos commits. Através do comando `git-log` podemos identificar qual é a chave calculada para um determinado commit. Vamos analisar o seguinte commit como exemplo:
+Para falarmos sobre a próxima estrutura de dados do que está presente no Git vamos precisar entender um pouco mais sobre a estrutura dos commits. Através do comando `git-log` podemos identificar qual é a chave calculada para um determinado commit. Vamos analisar o seguinte commit como exemplo:
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/7hliz7tjl5ovnvrqaa5t.png)
+![Commit de atualização do readme](media/commit-update-readme.png)
 
-Agora que nós sabemos o hash, podemos utilizar uma função do próprio Git para ler o seu conteúdo: a função **cat-file**. Basta utilizar essa função passando **-p**(print) e o hash que observamos como parâmetros: 
+Com o hash de um commit em mãos podemos utilizar uma função para ler o seu conteúdo: a função **cat-file**. Basta utiliza-lá passando **-p**(print) e o hash que observamos como parâmetros: 
 
-`git cat-file -p 59d80c6ce2b65acdb308058b2b0c97a4358df8f6`
+`git cat-file -p 679b79c84959ea166b1fe91b048643a0dd8bd0b2`
 
-Executando o comando, vemos as seguintes informações(Se você estiver analisando um commit com alguma chave gpg associada podem ser que apareçam mais campos):
+Executando o comando vemos as seguintes informações:
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/wf4uchwtrdmpeda9xgrn.png)
+![Detalhes do commit de atualização do readme](/media/git-commit-update-readme-detailed.png)
 
-* *Tree*: O hash respectivo a estrutura de diretório da pasta raiz do repositório(Mais detalhes em breve)
-* *Author*: O autor do commit(Nesse caso, **sou eu**) e algumas informações de timestamp
-* *commiter*: Contém informações de cadastro do repositório do autor commit e alguns valores de timestamp
-* *First Commit*: A mensagem do commit
+* **tree**: O hash respectivo a estrutura de diretórios partindo da pasta raiz do repositório(*Mais detalhes em breve*)
+* **parent**: O hash do commit anterior à esse commit.
+* **author**: O autor do commit(Nesse caso, **sou eu**) e algumas informações de timestamp.
+* **commiter**: O commiter é quem de fato fez o merge de um commit específico. Exemplificando: se você fizer um pull-request para um projeto e um dos membros principais mergeá-lo, vocês dois receberão crédito - você como autor e o membro principal como committer. Também temos informações de timestamp aqui.
+* **Update Readme**: A mensagem do commit
 
 Podemos conceituar que o commit é um `snapshot` da atual configuração de todos os arquivos indexados do repositório. Quando digo indexado é tudo que está versionado previamente ou o que passou a ser versionado após o commit.
 
@@ -92,41 +94,61 @@ Esse retrato fiel do repositório está no atributo `tree` do commit. E o que é
 
 ### Tree
 
-Não muito longe da tradução, se trata de uma árvore de referências. Computacionalmente estamos falando de uma estrutura de dados com diferentes ligações entre nós de informações, mas que diferente de uma estrutura linear como um array ou uma lista temos profundidade na navegabilidade. Abaixo segue um exemplo de uma árvore binária:
+![Atributo tree destacado nos detalhes do commit](/media/tree-highlighted-in-commit-update-readme.png)
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/4ealcra9lay6gdn7j8wi.png)
+Não muito longe da tradução, se trata de uma árvore de referências. Computacionalmente estamos falando de uma estrutura de dados com diferentes ligações entre nós de informações, mas que diferente de uma estrutura linear como um array ou uma lista temos profundidade na navegabilidade. 
 
-### Propriedades de uma árvore
-
-:
-* **Nó Raiz**: Nó topo da árvore, da qual descendem os demais nós.()
-* **Nó Interior**: Nó do interior da árvore que possuí descendentes
-* **Nó folha**: Também denominado como nó terminal, é um nó que não possui mais descendentes e está na extremidade da árvore.
-* **Trajetória**: São os nós percorridos ao longo da árvore até se chegar a uma nó específico
-
-Diferente das **árvores binárias**, que pela definição cada nó só pode apontar para no máximo duas referências, a árvore de versionamento pode ter `n` referências da mesma forma que dentro de uma pasta podem haver `n`subpastas e `n` arquivos.
-
-Já sabemos como ver a informação dentre um hash do Git. Basta utilizarmos o **git cat-file -p** e passar o hash da tree:
+Agora que já sabemos como ver a informação dentre um hash do Git, basta executarmos o seguinte comando:
 
 `git cat-file -p 59d80c6ce2b65acdb308058b2b0c97a4358df8f6`
 
-Na computação o que vemos de otimizado em árvores em relação à outras estruturas de dados é a sua navegabilidade, desde que haja um balanceamento entre os nós como árvores [B](https://www.ime.usp.br/~pf/estruturas-de-dados/aulas/B-trees.html), [AVL](https://pt.wikipedia.org/wiki/%C3%81rvore_AVL) ou [Rubro-Negras](https://pt.wikipedia.org/wiki/%C3%81rvore_rubro-negra). 
+E temos como resultado:
 
-### Árvore de versionamento
+![Resultado do comando executado acima](/media/commit-tree-content.png)
 
-Diferente desse cenário, o git não se aproveita das vantagens de busca em árvores especificamente, mas sim em otimizar o reaproveitamento das referências desses nós. Guardar os dados dessa forma resolve o problema de armazenar nomes de arquivos, além de que é possível agrupar arquivos do mesmo contexto.
+O resultado embora aparentemente não diga muita coisa está representando exatamente a estrutura do repositório que eu estou explorando como exemplo:
 
+![Repositório](/media/image-repository.jpg)
 
+A árvore de versionamento tem dois possiveis tipos de valores armazenados:
+* **Blob**: é qualquer arquivo binário do repositório. No caso do exemplo que usei acima é o **README.md**
+* **Tree**: Um diretório. Na prática é uma árvore que pode ter várias sub-pastas e arquivos dentro.
+
+A figura abaixo representa exatamente a estrutura de pastas e arquivos do repositório.
+
+![Alt Text](media/how-git-works-tree.png)
+
+Podemos observar que o **nó-folha** (o nó na extremidade da árvore) sempre será um Blob. Na prática isso quer dizer que o Git não versiona pastas vazias. A **tree** só vai existir se existir alguma referência para um arquivo dentro dessa pasta.
+
+<figure>
+	<blockquote>
+		<p>Os commits são essencialmente referências para novas árvores. Sempre que alteramos algum arquivo, adicionamos um arquivo diferente ou renomeamos uma pasta também estamos reorganizando essa árvore de referências.</p>
+	</blockquote>
+</figure>
+
+![Documentação do Git](https://git-scm.com/book/en/v2/images/data-model-3.png)
+
+Conforme é mostrado na fígura apresentada no início do artigo, nós estamos sempre gerando novas árvores a cada commit. Como é uma estrutura que utiliza funções determinísticas e que qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do Git. Fez mais sentido agora o nome **branch**, não?
+
+É interessante saber também que o git possuí um sistema de **garbage-collector**. O objetivo é remover arquivos desnecessários de branches antigos que já não fazem mais sentido no repositório. Mas como o Git avalia isso? 
+
+Como é uma estrutura de árvore, ao executar o comando `git gc --prune` por exemplo, o git varre as árvores de versionamento e encontra branches que não tem relação mais com nenhum galho dessa árvore, ou que já está diluido na mesma devido a um merge.
 
 ## Um pouco de imutabilidade
 
-Se você já viu algum conteúdo sobre programação funcional já deve ter lido a palavra **imutabilidade**. A princípio quem trabalha com linguagens que não suportam nativamente isso como javascript, Java ou C e tantas outras acho o conceito um pouco estranho. Se eu programo abstrações como classes, interfaces e funções genéricas porque seria interessante não ter variáveis?
+Se você já viu algum conteúdo sobre programação funcional já deve ter lido a palavra **imutabilidade**. A princípio quem trabalha com linguagens que não suportam nativamente isso acha o conceito um pouco estranho. *Se eu programo abstrações como classes, interfaces e funções genéricas porque seria interessante não ter variáveis?*
 
-Não é exatamente disso que imutabilidade trata. Na verdade, o conceito é imutabilidade é sobre deixar acessível um determinado valor mesmo que a sua referência direta tenha mudado. Um valor específico ainda vai ficar acessível para computações que ainda precisam enxergar aquele valor, ou podem acessar futuramente.
+![cena famosa que um guarda pede calma](https://media.giphy.com/media/XEo7YJHUeplXa/giphy.gif)
 
-Através de alguns comandos do git como **rebase** e **amend** nós temos o poder de rescreever a história do commit.
+Calma, não é exatamente disso que imutabilidade trata. Na verdade, o conceito de imutabilidade é sobre deixar acessível um determinado valor mesmo que a sua referência direta tenha mudado. E sobre deixar um valor específico ainda acessível para computações que precisem enxergar aquele valor futuramente.
 
-![Alt Text](https://media.giphy.com/media/RfEbMBTPQ7MOY/giphy.gif)
+O que isso na prática quer dizer? 
+
+Os comandos que existem para alteração de commits como **git rebase** ou **git ammend** na prática reescrevem commits, e não os altera diretamente. Estamos definindo ao reescrever um novo commit atributos como: novo timestamp, novo autor ou novas alterações nos **blobs** e por consequências nas **trees**.
+
+Não estamos fazendo uma alteração clássica de valor de uma variável como na programação, mas sim reescrevendo uma nova referência e preservando a antiga. Se essa estrutura não fosse imutável a cada vez que fizessemos um rebase mudaríamos também todas as referências de todos os outros branches no repositório que conhecem aqueles mesmos arquivos.
+
+**Thanks Imutabilidade**
 
 ## Para saber mais
 
