@@ -70,7 +70,7 @@ O resultado da função é determínistico, ou seja, dado o mesmo input a funç�
 
 ## Commits
 
-Para falarmos sobre a próxima estrutura de dados do que está presente no Git vamos precisar entender um pouco mais sobre a estrutura dos commits. Através do comando `git-log` podemos identificar qual é a chave calculada para um determinado commit. Vamos analisar o seguinte commit como exemplo:
+Para falarmos sobre a próxima estrutura de dados vamos precisar entender um pouco mais sobre a estrutura dos commits: 
 
 ![Commit de atualização do readme](media/commit-update-readme.png)
 
@@ -82,7 +82,7 @@ Executando o comando vemos as seguintes informações:
 
 ![Detalhes do commit de atualização do readme](/media/git-commit-update-readme-detailed.png)
 
-* **tree**: O hash respectivo a estrutura de diretórios partindo da pasta raiz do repositório(*Mais detalhes em breve*)
+* **tree**: O hash respectivo à estrutura de diretórios e arquivos do repositório(*Mais detalhes abaixo*)
 * **parent**: O hash do commit anterior à esse commit.
 * **author**: O autor do commit(Nesse caso, **sou eu**) e algumas informações de timestamp.
 * **commiter**: O commiter é quem de fato fez o merge de um commit específico. Exemplificando: se você fizer um pull-request para um projeto e um dos membros principais mergeá-lo, vocês dois receberão crédito - você como autor e o membro principal como committer. Também temos informações de timestamp aqui.
@@ -128,7 +128,7 @@ Podemos observar que o **nó-folha** (o nó na extremidade da árvore) sempre se
 
 ![Documentação do Git](https://git-scm.com/book/en/v2/images/data-model-3.png)
 
-Conforme é mostrado na figura apresentada no início do artigo, estamos sempre gerando novas árvores a cada commit. Como estamos trabalhando em um sistema que utiliza funções determinísticas onde que qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do nossos arquivos. Fez mais sentido agora o nome **branch**, não?
+Conforme é mostrado na figura apresentada no início do artigo, estamos sempre gerando novas árvores a cada commit. Como estamos trabalhando em um sistema que utiliza funções determinísticas onde qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do nossos arquivos. Fez mais sentido agora o nome **branch**, não?
 
 É interessante saber também que o git possuí um sistema de **garbage-collector**. O objetivo é remover arquivos desnecessários de branches antigos que já não fazem mais sentido no repositório. Mas como o Git avalia isso? 
 
@@ -144,7 +144,7 @@ Calma, não é exatamente disso que imutabilidade trata. Na verdade, o conceito 
 
 Na prática isso quer dizer o quê? 
 
-Os comandos que existem para alteração de commits como **git rebase** ou **git ammend** na prática reescrevem commits, e não os altera diretamente. Estamos definindo ao reescrever um novo commit atributos como: novo timestamp, novo autor ou novas alterações nos **blobs** e por consequências nas **trees**.
+Os comandos que existem para alteração de commits como **git rebase** ou **git ammend** reescrevem commits, e não os altera diretamente. Ao reescrever um novo commit estamos definindo novos atributos como: timestamp, novo autor ou novas alterações nos **blobs** e por consequências nas **trees**.
 
 Não estamos fazendo uma alteração clássica de valor de uma variável como na programação, mas sim reescrevendo uma nova referência e preservando a antiga. Se essa estrutura não fosse imutável a cada vez que fizessemos um rebase mudaríamos também todas as referências de todos os outros branches no repositório que conhecem aqueles mesmos arquivos.
 
