@@ -16,7 +16,7 @@ socialImage: "/media/git-database-flow.png"
 ![Fluxo do Git. - Fonte: Documentação do Git](/media/git-database-flow.png)
 *Fonte: [Documentação do Git](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)*
 
-Você já se perguntou como o Git persiste nossos arquivos? Como ele consegue lidar com tantos arquivos de forma distribuída? Embora seja praticamente invisível essa persistência possuí muitas particularidades interessantes pra quem gosta de **estrutura de dados**.
+Você já se perguntou como o Git persiste nossos arquivos? Como ele consegue lidar com tantos arquivos de forma distribuída? Embora seja praticamente invisível essa persistência possui muitas particularidades interessantes pra quem gosta de **estrutura de dados**.
 
 Vamos entender como funciona?
 
@@ -38,7 +38,7 @@ Na ciência da computação existem muitas estruturas associativas como: arrays 
 
 Embora a matemática seja parte integrante da computação, o termo **associação não tem nada a ver com a propriedade de associação da matemática ou de lógica propositiva**.
 
-Metaforicamente é como se o Git consegue conseguisse buscar um elemento na sua base de dados similar a forma que buscamos um significado de uma palavra em um dicionário. 
+Metaforicamente é como se o Git conseguisse buscar um elemento na sua base de dados similar a forma que buscamos o significado de uma palavra em um dicionário. 
 
 **Mas o que git associa? por que termos ele busca?** 
 
@@ -48,7 +48,7 @@ O git se guia por hashes. Podemos ver isso ao executar um **git-log** e ver vár
 
 ![Figura do Git Log com muitos commits](/media/hashes-everywhere.jpg)
 
-Conceituando: Um hash é uma string de comprimento fixo calculado por algum algoritmo especialista nisso(como MD5, SHA1) onde o objetivo é ter um resultado único respectivo aos parâmetros de entrada.
+**Conceituando**: Um hash é uma string de comprimento fixo calculado por algum algoritmo especialista nisso(como MD5, SHA1) onde o objetivo é ter um resultado único respectivo aos parâmetros de entrada.
 
 No caso do git essas chaves podem ser geradas a partir de qualquer sequência de bytes oriundo de qualquer tipo de arquivo. Para cada uma dessas sequências é calculada uma chave do tipo [SHA1](https://en.wikipedia.org/wiki/SHA-1). 
 
@@ -66,7 +66,7 @@ E o resultado é sempre o mesmo:
 
 > Precisei utilizar o *echo*, *stdin* e o *|* porque estamos somente utilizando o algoritmo, mas não operando sobre uma sequência de bytes já conhecida pelo git, como um arquivo commitado. Dessa forma estamos enviando uma stream de bytes para o git **hash-object** criptografar
 
-O resultado da função é determínistico, ou seja, dado o mesmo input a função retorna sempre o mesmo resultado. Esse é um dos mecanismo que ajuda à garantir que cada mudança no seu repositório mapeada pelo git seja respectiva ao que de fato foi alterado.
+O resultado da função é determínistico, ou seja, dado o mesmo input a função retorna sempre o mesmo resultado. Esse é um dos mecanismo que ajuda a garantir que cada mudança no seu repositório mapeada pelo git seja respectiva ao que de fato foi alterado.
 
 ## Commits
 
@@ -110,7 +110,7 @@ O resultado embora aparentemente não diga muita coisa está representando exata
 
 ![Repositório](/media/image-repository.jpg)
 
-A árvore de versionamento tem dois possiveis tipos de valores armazenados:
+A árvore de versionamento tem dois possíveis tipos de valores armazenados:
 * **Blob**: é qualquer arquivo binário do repositório. No caso do exemplo que usei acima é o **README.md**
 * **Tree**: Um diretório. Na prática é uma árvore que pode ter várias sub-pastas e arquivos dentro.
 
@@ -130,7 +130,7 @@ Podemos observar que o **nó-folha** (o nó na extremidade da árvore) sempre se
 
 Conforme é mostrado na figura apresentada no início do artigo, estamos sempre gerando novas árvores a cada commit. Como estamos trabalhando em um sistema que utiliza funções determinísticas onde qualquer mínima alteração já torna a estrutura diferente, sempre estamos recriando novas ramificações dentre as múltiplas possíveis versões do nossos arquivos. Fez mais sentido agora o nome **branch**, não?
 
-É interessante saber também que o git possuí um sistema de **garbage-collector**. O objetivo é remover arquivos desnecessários de branches antigos que já não fazem mais sentido no repositório. Mas como o Git avalia isso? 
+É interessante saber também que o git possui um sistema de **garbage-collector**. O objetivo é remover arquivos desnecessários de branches antigos que já não fazem mais sentido no repositório. Mas como o Git avalia isso? 
 
 Como é uma estrutura de árvore, ao executar o comando `git gc --prune` por exemplo, o git varre as árvores de versionamento e encontra branches que não tem relação mais com nenhum galho dessa árvore, ou que já está diluido na mesma devido a um merge.
 
