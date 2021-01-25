@@ -1,5 +1,5 @@
 ---
-title: "Every Software Developer is A Potential Writer"
+title: "Every Software Developer is a Potential Writer"
 date: "2020-09-12T22:40:32.169Z"
 template: "post"
 draft: false
