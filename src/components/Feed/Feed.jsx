@@ -49,7 +49,7 @@ const Feed = ({ edges }) => (
           data-testid={`link-read-more-${index}`}
           to={edge.node.fields.slug}
         >
-          Ver Mais
+          Read
         </Link>
       </div>
     ))}

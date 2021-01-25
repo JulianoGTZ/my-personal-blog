@@ -1,33 +1,33 @@
 ---
-title: 'Sobre mim'
+title: 'About me'
 template: 'page'
 socialImage: '/media/image-2.jpg'
 ---
+## Where I from, What I Do, Where I live
 
-## De onde vim, o que faço, o que como, onde vivo
+Hi, my name is Juliano Pereira Lima. I have a bachelor's degree in Computer Science from [UNIVALI](https://www.univali.br/graduacao/ciencia-da-computacao-itajai). A relevant part of my graduation was also done at [UEMS](https://www.comp.uems.br/).
 
-Olá, meu nome é Juliano Pereira Lima, formado em Ciência da Computação pela [UNIVALI](https://www.univali.br/graduacao/ciencia-da-computacao-itajai), mas com boa parte feita também na [UEMS](https://www.comp.uems.br/).
+I'm from **Mato-Grosso do Sul**. Currently, I'm living in São Paulo, Capital.
 
-Sou **Sul**-Mato-Grossense e atualmente moro em São Paulo, Capital.
+I'm software Engineer at Nubank, working specifically in Back-End using Clojure in a [very plural architecture](https://www.infoq.com/presentations/nubank-architecture/). I have worked with Java, C#, and React in past jobs, and sometimes I still develop some stuff with these technologies (mostly for fun).
 
-Trabalho no Nubank, como engenheiro de software, especificamente com Back-end utilizando Clojure e [uma stack super plural pra resolver muitos problemas de computação distribuída](https://www.infoq.com/presentations/nubank-architecture/). Tenho background de desenvolvimento de software com Java, C# e React de empregos anteriores. Ainda tenho um carinho por essas tecnologias e volta e meia estou programando nisso também.
+I love the **Science** in the Computer Science. I usually study through textbooks, presentations, events, own experiments, and scientific articles trying to understand more about the theory behind everything happening technologically in the world.
 
-Particularmente gosto muito da **Ciência** que existe na **computação**. Geralmente procuro através de obras literárias, apresentações, eventos, experimentos próprios e artigos científicos tentar entender um pouco um mais sobre a teoria que rege tudo que está acontecendo digitalmente no mundo.
+The biggest obstacles I have experienced professionally led me to study Agile. I love to study this topic, together with organizational structures. This knowledge greatly increases my breadth of problem solving and helps me a lot to develop what is really necessary.
 
-Os maiores obstáculos que passei profissionalmente atuando com software me levaram a estudar Agilidade. Gosto muito de estudar esse tema, junto com estruturas organizacionais e tento com esse conhecimento otimizar os recursos humanos também nos times que faço parte.
 
-Gosto de contribuir para a comunidade participando de [Meetups](https://youtu.be/1RFgwFJ73rc), artigos no [Dev.to](https://dev.to/julianogtz), [Medium](https://medium.com/@julianodgtz), e algumas contribuições pro Open-Source pra projetos como [Sweet Alert 2](https://sweetalert2.github.io/) e [Dev.to](http://dev.to/).
+I like to contribute to the community by participating in [Meetups](https://youtu.be/1RFgwFJ73rc), writting on [Dev.to](https://dev.to/julianogtz) and [Medium](https://medium.com/@julianodgtz) and contributing to open source for projects like [Sweet Alert 2](https://sweetalert2.github.io/) and [Dev.to](http://dev.to/)
 
-Adoro hambúrgueres, cinema, cervejas variadas, futebol(especialmente o **Corinthians**) e desenhos `nonsense`.
+I love burgers, movies, different types of beer, football(especially **Corinthians**), and Non-Sense Cartoons.
 
-![Apenas um show](https://media.giphy.com/media/5hqs5IXmeIRFe6UlQa/giphy.gif)
+![Regular Show](https://media.giphy.com/media/5hqs5IXmeIRFe6UlQa/giphy.gif)
 
-Sou adepto do **pair-programming**. Geralmente estou programando com o **Jorge**:
+I'm a fan of **pair-programming**. Usually, I'm programming with **Jorge**.
 
-![Jorge, Um gatinho pretinho fofinho](/media/jorge.jpg)
+![Jorge, a very cute cat](/media/jorge.jpg)
 
-### Direitos autorais
+### Copyright
 
-Todas as informações publicadas neste blog são criadas por mim. As informações neste site representam minha opinião pessoal, e que pode não ser igual à sua ou de qualquer outra pessoa, incluindo a empresa para qual eu trabalho.
+All information published on this blog is created by me. The information on this site represents my personal opinion, and it may not be the same as yours or anyone else's, including the company I work for.
 
-Sinta-se livre para utilizar o conteúdo produzido aqui, desde que haja uma referência para a fonte original (este blog) e haja comum acordo entre o criador de conteúdo e quem o está reproduzindo.
+Feel free to use the content produced here, as long as there is a reference to the original source (this blog) and there is a common agreement between the content creator and who is reproducing it.
