@@ -24,6 +24,6 @@ describe('Meta', () => {
   it('Should show the right status', () => {
     const { getByTestId } = render(<Meta {...props} />);
     const meta = getByTestId('publish-meta');
-    expect(meta.textContent).toBe("Publicado em 3 set 2020");
+    expect(meta.textContent).toBe("Published 3 Sep 2020");
   });
 });
