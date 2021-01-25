@@ -1,122 +1,122 @@
 ---
-title: "Como Aprimorar A Escrita Me Torna Um Desenvolvedor De Software Melhor"
+title: "Every Software Developer is A Potential Writer"
 date: "2020-09-12T22:40:32.169Z"
 template: "post"
 draft: false
-slug: "como-aprimorar-a-escrita-me-torna-um-desenvolvedor-de-software-melhor"
-category: "Carreira"
+slug: "every-software-developer-is-a-potential-writer"
+category: "Carrer"
 tags:
-  - "Escrita"
-  - "Carreira"
-  - "Desenvolvimento de Software"
-description: "Como o exercício da escrita em diferentes situações me ajuda a entregar software com mais qualidade."
+  - "Writing"
+  - "Career"
+description: "Do you have a blog? do you write articles? If you are a software developer I think you have a strong potential to be a good writer."
 socialImage: "/media/summerios.jpg"
 ---
 
-![Escrita Cuneiforme criada pelos Sumérios por volta de 3.500 a.C. - Fonte: InfoEscola](/media/summerios.jpg)
-*Escrita Cuneiforme criada pelos Sumérios por volta de 3.500 a.C. - Fonte: [InfoEscola](https://www.infoescola.com/historia/sumerios/)*
+![Cuneiform script created by the Sumerians around 3,500 B.C. - Source: InfoEscola](/media/summerios.jpg)
+*The Cuneiform script created by the Sumerians around 3,500 BC - Source: [InfoEscola](https://www.infoescola.com/historia/sumerios/)*
 
-**Olá, bem vindo**. Esse é o post piloto do meu blog, o primeiro artigo de muitos que postarei por aqui :)
+**Hello, Welcome**. This is the pilot post of my blog, the first article of many that I'm going to post here :)
 
-Decidi como primeiro assunto abordar a principal motivacao do Blog que é **Transmitir conhecimento através da escrita.**  Esse é um dos pontos que mais me ajudam a evoluir pessoal e profissionalmente e vou explicar o porquê.
+I decided as the first subject to address the main motivation of the Blog: **Transmitting knowledge through writing.** This is one of the points that help me to evolve personally and professionally and I'm going to explain why.
 
-## Todo Programador é um escritor em potencial
+## Why Every Programmer is a Potential Writer
 
-Gosto de pensar que assim como os Sumérios na antiga civilização mesopotâmica (atual Iraque) revolucionaram a forma como a sociedade transmitia conhecimento **através da invenção da escrita**, **os programadores também estão revolucionando a escrita quase como os escribas do nosso tempo**. Com a inevitável inserção da tecnologia em todos os âmbitos da sociedade, quem está programando está sintentizando em código os problemas, soluções, anseios e as limitações que estamos vivenciando.
+I like to think that just as the Sumerians in the ancient Mesopotamian civilization (present-day Iraq) revolutionized the way society transmitted knowledge **through the invention of writing**, **programmers are also revolutionizing writing almost like the scribes of our time**. With the inevitable insertion of technology in all areas of society, those who are programming are synthesizing in code the problems, solutions, desires and limitations that we are currently living.
 
 <figure>
 	<blockquote>
-		<p>“Com grandes poderes vêm grandes responsabilidades"</p>
+		<p>“With great power comes great responsibility"</p>
 		<footer>
 			<cite>— Stan Lee</cite>
 		</footer>
 	</blockquote>
 </figure>
 
-**Essa não é uma tarefa fácil**. Seja nomeando variáveis, funções, classes, métodos ou descrevendo um pull-request estou sempre fazendo o exercício de transmitir uma ideia, ou estou lendo um trecho de código pra entender a idéia de outra pessoa. 
+**This is not an easy assignment**. Whether naming variables, functions, classes, methods, or describing a pull-request, I'm always doing the exercise of transmitting an idea, or I'm reading a code snippet to understand someone else's idea.
 
-Como o [Clean Code](https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=asc_df_B001GSTOAM/?tag=googleshopp00-20&linkCode=df0&hvadid=379765265654&hvpos=&hvnetw=g&hvrand=2551010271922584819&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001773&hvtargid=pla-406130706465&psc=1) bem aborda, assim como um texto que não é claro, um código que não é expressivo as vezes quase precisa **de um trabalho de paleontologia pra entender o que está acontecendo por baixo dos panos**.
+How [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=asc_df_B001GSTOAM/?tag=googleshopp00-20&linkCode=df0&hvadid=379765265654&hvpos=&hvnetw=g&hvrand=2551010271922584819&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001773&hvtargid=pla-406130706465&psc=1) address, as a text that is not clear a code that is not expressive sometimes almost **needs a work of paleontology to understand what is happening under the hood**.
 
-![O número de wtfs por minuto diz muito sobre a qualidade do código](/media/wtfm.jpg)
-
-<figure>
-	<blockquote>
-		<p>A habilidade de escrever código que: revele propósito, use nomenclaturas de domínio do negócio, evite informações erradas, faça distinções significativas e tenha nomes passíveis de busca(dentre vários outros fatores de qualidade) vem com muita prática e estudo ao longo anos de experiência acompanhado de feedbacks.</p>
-	</blockquote>
-</figure>
-
-### Lembre-se que você está escrevendo para outra pessoa ler. Código não é diário.
-
-O exercício de me colocar no lugar de quem vai ler e tentar interpretar me ajuda a encontrar bons pontos de melhoria em tudo que desenvolvo, seja essa pessoa colega de trabalho, amiga, professora ou **meu eu do futuro**.
-
-## Desenvolver software não é somente escrever código
-
-Escrever código é um grande desafio e requer muito estudo técnico pra usufruir do máximo da linguagem. *Mas programar é só codificar?*
-
-Na minha opinião, **não**. Desenvolver software não é só sobre programar, **mas também é entender a problemática que vou tentar resolver, para resolver bem**. Trazendo um pouco de teoria dos conjuntos o programador está na **intersecção** entre o mundo concreto dos negócios e o mundo abstrato das implementações de software.
-
-![Intersecção entre desenvolvedor de software com o mundo dos negócios e tecnologia](/media/developer-intersection.png)
-
-Parte do meu trabalho como desenvolvedor é transmitir as ideias que cerceiam o desenvolvimento de forma clara e concreta para todos os *stakeholders*. Entendimento do problema e boa comunicação otimizam o esforço necessário de todos os envolvidos.
-
-## Como aprimoro minha escrita?
-
-Muitas vezes como desenvolvedor preciso sintetizar conteúdos totalmente complexos e abstratos em conceitos **concretos** e **palpáveis**. Como explicar isso?
-
-![Explique para mim como se seu fosse uma criança de 4 anos](https://media.giphy.com/media/nuuS1IlKqd2dq/giphy.gif)
-
-### Elementos Visuais e Analogias > Jargões
-
-Desenvolvedores de software em geral possuem um dialeto próprio repleto de siglas como: *Docker*, *Kubernetes*, *Git*, *Deploy*, *ETL*, dentre muitas outras. Essa comunicação é extremamente eficiente entre os iniciados desse idioma mas **é extremante complexa pra quem não é**. É bem importante entender quem é o seu público-alvo e se há familiaridade dessas *buzzwords*.
-
-As analogias são uma ótima alternativa para ajudar a materializar conceitos complexos. Elas são extremamente efetivas para fazer termos estranhos se tornarem famíliares por abrir um paralelo com algo da realidade da pessoa. 
+![The number of wtfs per minute says a lot about the quality of the code](/media/wtfm.jpg)
 
 <figure>
 	<blockquote>
-		<p>Falando sobre custos a computação em nuvem é como conectar-se a uma rede elétrica central em vez de produzir minha própria energia. Eu só preciso pagar o que eu consumo e não me preocupo diretamente em como a energia está sendo distribuída</p>
+		<p>The ability to write code that: reveals purpose, uses business domain nomenclatures, avoids misinformation, makes significant distinctions, and has searchable names (among many other quality factors) comes with lots of practice and study over years of experience.</p>
 	</blockquote>
 </figure>
 
-Diagramas são bem poderosos para apresentar ideias complexas de uma forma agnóstica de tecnologia. Algumas ferramentas como o [Miro](https://miro.com/) provêm um grande leque de diagramas e ferramentas para tornar a apresentação interativa.
+### Remember that your code should be clear to you and your coworkers. Code is not a diary.
 
-![Exemplo de Diagrama feito no Miro](/media/flow.png)
-*Exemplo de Diagrama feito no [Miro](https://miro.com)*
+The exercise of putting myself in the shoes of someone who will read and try to interpret helps me find good points for improvement in everything I develop, whether that person is a coworker, friend, teacher, or **my future self**.
+## Software development is not just writing code
+
+Programming is a big challenge and requires a lot of technical studies to clearly express your idea using the best resources of a given language. *But is programming just coding?*
+
+In my opinion, **no**. Software development is not only about programming, **but it is also about understanding the problem outside the computer bits**. 
+
+To code better you need to have a broad vision about the reason that you're coding like: **the business problem**, **the stakeholder's motivation**, **what value this development is bringing?**, etc.
+
+Talking a little bit about set theory, the programmer is at the **intersection** between the concrete world of business and the abstract world of software implementations.
+![Intersection between software developer with the world of business and technology](/media/developer-intersection.png)
+
+Part of my job as a software developer is to transmit the ideas that round development in a clear and concrete way to all *stakeholders*. The problem understanding and good communication optimize the required effort by everyone involved.
+
+## How can I improve my writing skill?
+
+Often as a developer, I need to synthesize complex and abstract content into **concrete** and **palpable** concepts. How to explain it?
+
+![Explain to me like I'm four years old](https://media.giphy.com/media/nuuS1IlKqd2dq/giphy.gif)
+
+### Visual Elements and Analogies> Buzzwords
+
+In general software developers have their own dialect full of acronyms such as: *Docker*, *Kubernetes*, *Git*, *Deploy*, *ETL*, among many others. This communication is extremely efficient among the initiates of that language but **it is extremely complex for those who are not**. It is very important to know who your target audience is and if they are familiar with these terms.
+
+Analogies are a great alternative to help materialize complex concepts. They are extremely effective in familiarizing strange terms by opening a parallel with something in the person's reality.
 
 <figure>
 	<blockquote>
-		<p>Por mais incrível que seu texto pareça é super importante pedir feedback para garantir que sua ideia foi bem entendida.</p>
+		<p>Talking about costs, cloud computing is like connecting to a central power grid instead of producing my own energy. I just need to pay for what I consume and I don't worry directly about how the energy is being distributed</p>
 	</blockquote>
 </figure>
 
-### Leitura
+Visual elements like diagrams are a very powerful tool for presenting complex ideas in an agnostic way of technology. Some solutions like [Miro](https://miro.com/) provide a wide range of diagrams and tools to make an interactive presentation.
 
-Pra mim **a leitura é tão importante quanto a prática para escrever bem**. Ler livros e artigos de variados âmbitos me dá muito insumo intelectual para transmitir ideias com diferentes abordagens. Geralmente tento adicionar no meu cinto de utilidades cada analogia ou exemplo que me faz entender algum conceito.
+![Diagram example made on Miro](/media/flow.png)
+*Diagram example made on [Miro](https://miro.com)*
 
-## Escrever claramente é ainda mais valioso em times distribuídos
+<figure>
+	<blockquote>
+		<p>As incredible as your text seems, it's very important to ask for feedback to ensure that your idea was well understood.</p>
+	</blockquote>
+</figure>
 
-Em tempos de trabalho remoto onde temos times distribuídos há uma tendência natural de muitas reuniões para alinhamentos de tarefas e expectativas, principalmente em lugares que o trabalho remoto estava longe de ser uma realidade.
+### Reading
 
-Sem o contato presencial perdemos alguns elementos de comunicação como linguagem corporal, mas ao mesmo tempo temos mais oportunidades para melhorar a nossa comunicação escrita. Um texto bem conciso pode te salvar de longas reuniões, longas contextualizações e **pode salvar muito do seu tempo de foco no dia**.
+This is the best tip I can give to someone who wants to write well: **Read a lot**! 
 
-Escrever concisamente a descrição da reunião para os participantes ou estressar alguns assuntos assíncronamente para uma eventual reunião ser mais produtiva tem sido bem efetivo pra mim.
+Reading books and articles from different subjects gives to me a lot of intellectual input to transmit ideas with different approaches. I usually try to add to my utility belt every analogy or example that makes me understand some concept.
+## Writing well is even more valuable in distributed teams
 
-## Tudo isso me faz desenvolver melhor
+In times of remote work in which we have distributed teams, there is a natural tendency for many meetings to align assignments and expectations, especially in places where remote work was far from being a reality.
 
-Eu percebo que ao tentar aprimorar minha escrita eu aprimoro também a minha capacidade de entregar software e resolver problemas. O exercício de **escrever** e **ler** enriquece cada vez mais o meu mapa mental de como desenvolver soluções, seja codificando ou entendendo problemáticas. 
+Without face-to-face contact we lose some elements of communication such as body language, but at the same time we have more opportunities to improve our written communication. A very concise text can save you from long meetings, long contextualizations and **can save a lot of your focus time in the day**.
 
-Nem toda a escrita precisa ser em artigos, blogs e revistas. Ela pode começar:
-* Nos canais de comunicação do seu time
-* No pull-request que você está trabalhando 
-* Na mensagem de commit 
-* No README do projeto em que você está trabalhando.
-* ~~Em uma discussão no grupo de Whatsapp da família~~
+Briefly writing the description of the meeting for the participants or stressing some issues/hypotheses asynchronously for an eventual meeting to be more productive has been very effective for me.
+## Writing better = coding better
 
-## Para estudar mais
+I realize that as I’m trying to improve my writing skill I'm also improving my ability to deliver software and solve problems. The exercise of **writing** and **reading** increasingly enriches my mental map of how to develop solutions, whether coding or understanding problems.
 
-Espero que você tenha gostado desse primeiro artigo, eu gostei muito de escrever. Vou deixar alguns links interesantes que utilizei como base para o artigo. Em breve volto com mais novidades.
+Not all writing needs to be in articles, blogs and magazines. you can start at:
+* In your team's communication channels
+* Pull-request descriptions 
+* Commit messages
+* In the README of the project you are working on.
+* ~~A polemic post on twitter~~
 
-* [Guia de Comunicação Interna do BaseCamp](https://basecamp.com/guides/how-we-communicate)
-* [Podcast Lambda3 - Comunicação Não Violenta](https://www.lambda3.com.br/2017/02/podcast-31-comunicacao-nao-violenta/)
+## Going Further
 
+I hope you enjoyed this first article because I really enjoyed writing it. I'm leaving here some interesting links that I've used as a basis for this article. 
+
+* [BaseCamp Internal Communication Guide](https://basecamp.com/guides/how-we-communicate)
+* [The Writers Journey: Mythic Structure for Writers](https://www.amazon.com/Writers-Journey-Mythic-Structure-3rd/dp/193290736X)
 
 *See you later o/*
