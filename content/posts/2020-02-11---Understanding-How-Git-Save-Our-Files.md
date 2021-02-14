@@ -1,15 +1,15 @@
 ---
-title: "As estruturas de dados por trás do git"
+title: "The Data Structures Behind Git"
 date: "2020-11-02T22:40:32.169Z"
 template: "post"
 draft: false
-slug: "as-estruturas-de-dados-por-tras-do-git"
+slug: "the-date-structures-behind-git"
 category: "Git"
 tags:
   - "Git"
-  - "Estruturas de dados"
+  - "Data Structures"
   - "Deep Dive"
-description: "Como o Git salva nossos arquivos? Em quais estruturas de dados os nossos arquivos são persistidos? Vamos entender melhor como o Git dispõe seus dados explorando as estruturas de dados existentes por baixo do capô"
+description: "How does Git save our files? In what data structures are our files persisted? Let's get a better understanding of how Git arranges its data by exploring the existing data structures under the hood"
 socialImage: "/media/git-database-flow.png"
 ---
 
