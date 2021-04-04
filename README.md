@@ -1,18 +1,20 @@
-## Meu Blog
+## My Blog
 
-Olá galera :tada:
+Hi folks o/
 
-Esse é o repositório do meu blog :rocket: utilizando React, Jest e Gatsby. Menção **Honrosa** ao [Lumen](https://lumen.netlify.com/), que foi a principal ferramenta utilizada, que acumula as demais tecnologias que o projeto contempla.
+This is the repository of my blog using React, Jest and Gatsby :rocket:. Honorable Mention to [Lumen](https://lumen.netlify.com/), which was the main tool used, which accumulates the other technologies that the project uses.
 
-Se você quiser ler mais sobre:
+If you want to know more about these technologies:
 
 - [React](https://reactjs.org/)
 - [Gatsby](https://www.gatsbyjs.org/)
 
-A documentação desse README ainda está pobre, mas ainda é o **começo.... de uma grande jornada**.
+This README is still poor regarding documentation details, but it is still the **beginning .... of a great journey**.
 
-Lembre-se do bom e velho [Manifesto Ágil](https://agilemanifesto.org/):
+As the [agile manifesto]((https://agilemanifesto.org/):) suggests:
 
 ```
 Working software over comprehensive documentation
 ```
+
+Have a good reading.
