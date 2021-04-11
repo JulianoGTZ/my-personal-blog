@@ -13,8 +13,7 @@ I'm software Engineer at Nubank, working specifically in Back-End using Clojure 
 
 I love the **Science** in the Computer Science. I usually study through textbooks, presentations, events, own experiments, and scientific articles trying to understand more about the theory behind everything happening technologically in the world.
 
-The biggest obstacles I have experienced professionally led me to study Agile. I love to study this topic, together with organizational structures. This knowledge greatly increases my breadth of problem solving and helps me a lot to develop what is really necessary.
-
+The biggest obstacles I have experienced professionally led me to study Agile. I love to study this topic, including organizational structures. This knowledge greatly increases my breadth of problem-solving and helps me a lot to develop what is really necessary.
 
 I like to contribute to the community by participating in [Meetups](https://youtu.be/1RFgwFJ73rc), writting on [Dev.to](https://dev.to/julianogtz) and [Medium](https://medium.com/@julianodgtz) and contributing to open source for projects like [Sweet Alert 2](https://sweetalert2.github.io/) and [Dev.to](http://dev.to/)
 
