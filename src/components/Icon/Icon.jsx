@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Icon.module.scss';
+import { icon as baita }from './Icon.module.scss';
 
 const Icon = ({ name, icon, testId }) => (
-  <svg className={styles.icon} viewBox={icon.viewBox} data-testid={testId}>
+  <svg className={baita} viewBox={icon.viewBox} data-testid={testId}>
     <title>{name}</title>
     <path d={icon.path} />
   </svg>

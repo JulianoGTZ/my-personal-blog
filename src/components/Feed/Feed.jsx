@@ -3,49 +3,51 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'gatsby';
 import { formatDate } from '../../utils';
-import styles from './Feed.module.scss';
+import { feed, feed__itemMeta, feed__item, feed__itemMetaTime, feed__itemMetaDivider, feed__itemMetaCategoryLink, feed__itemMetaCategory,
+feed__ItemTitle, feed__itemTitleLink, feed__itemDescription, feed__itemReadmore} from './Feed.module.scss';
+
 
 const Feed = ({ edges }) => (
-  <div data-testid="feed" className={styles.feed}>
+  <div data-testid="feed" className={feed}>
     {edges.map((edge, index) => (
       <div
         data-testid={`edge-field-${index}`}
-        className={styles.feed__item}
+        className={feed__item}
         key={edge.node.fields.slug}
       >
-        <div className={styles['feed__item-meta']}>
+        <div className={feed__itemMeta}>
           <time
-            className={styles['feed__item-meta-time']}
+            className={feed__itemMetaTime}
             data-testid={`edge-item-meta-time-${index}`}
             dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}
           >
             {formatDate({ date: edge.node.frontmatter.date })}
           </time>
-          <span className={styles['feed__item-meta-divider']} />
-          <span className={styles['feed__item-meta-category']}>
+          <span className={feed__itemMetaDivider} />
+          <span className={feed__itemMetaCategory}>
             <Link
               to={edge.node.fields.categorySlug}
               data-testid={`category-slug-link-${index}`}
-              className={styles['feed__item-meta-category-link']}
+              className={feed__itemMetaCategoryLink}
             >
               {edge.node.frontmatter.category}
             </Link>
           </span>
         </div>
-        <h2 className={styles['feed__item-title']}>
+        <h2 className={feed__ItemTitle}>
           <Link
-            className={styles['feed__item-title-link']}
+            className={feed__itemTitleLink}
             to={edge.node.fields.slug}
             data-testid={`link-title-link-${index}`}
           >
             {edge.node.frontmatter.title}
           </Link>
         </h2>
-        <p className={styles['feed__item-description']}>
+        <p className={feed__itemDescription}>
           {edge.node.frontmatter.description}
         </p>
         <Link
-          className={styles['feed__item-readmore']}
+          className={feed__itemReadmore}
           data-testid={`link-read-more-${index}`}
           to={edge.node.fields.slug}
         >

@@ -84,6 +84,7 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "16.13.1",
     "react-helmet": "^5.2.1",
+    "sass": "^1.35.1",
     "socket.io": "^3.1.0",
     "ssri": "^8.0.1"
   },

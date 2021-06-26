@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import { useSiteMetadata } from '../../hooks';
-import styles from './Layout.module.scss';
+import { layout } from './Layout.module.scss';
 
 const Layout = ({ children, title, description, socialImage }) => {
   const { author, url } = useSiteMetadata();
@@ -11,7 +11,7 @@ const Layout = ({ children, title, description, socialImage }) => {
   const metaImageUrl = url + withPrefix(metaImage);
 
   return (
-    <div className={styles.layout} data-testid="layout-image">
+    <div className={layout} data-testid="layout-image">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>

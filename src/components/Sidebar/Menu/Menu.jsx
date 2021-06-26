@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styles from './Menu.module.scss';
+import { menu as menu_style, menu__list, menu__listItem, menu__listItemLink, menu__listItemLinkActive } from './Menu.module.scss';
+
 
 const Menu = ({ menu }) => (
-  <nav data-testid="menu-navbar" className={styles.menu}>
-    <ul data-testid="menu-items" className={styles.menu__list}>
+  <nav data-testid="menu-navbar" className={menu_style}>
+    <ul data-testid="menu-items" className={menu__list}>
       {menu.map((item, index) => (
         <li
           id={`${item.path}-${index}`}
-          className={styles['menu__list-item']}
+          className={menu__listItem}
           key={item.path}
         >
           <Link
             to={item.path}
             data-testid={`menu-list-item-${index}`}
-            className={styles['menu__list-item-link']}
-            activeClassName={styles['menu__list-item-link--active']}
+            className={menu__listItemLink}
+            activeClassName={menu__listItemLinkActive}
           >
             {item.label}
           </Link>

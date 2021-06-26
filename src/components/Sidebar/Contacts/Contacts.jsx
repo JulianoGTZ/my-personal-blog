@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getContactHref, getIcon } from '../../../utils';
 import Icon from '../../Icon';
-import styles from './Contacts.module.scss';
+import * as styles from './Contacts.module.scss';
 
 const Contacts = ({ contacts }) => (
   <div data-testid="my-contacts" className={styles.contacts}>

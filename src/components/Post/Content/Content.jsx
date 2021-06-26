@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Content.module.scss';
+import * as styles from './Content.module.scss';
 
 const Content = ({ body, title }) => (
   <div className={styles.content} data-testid="post-content">

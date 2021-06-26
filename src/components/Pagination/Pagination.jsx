@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'gatsby';
 import { PAGINATION } from '../../constants';
-import styles from './Pagination.module.scss';
+import * as styles from './Pagination.module.scss';
 
 const cx = classNames.bind(styles);
 

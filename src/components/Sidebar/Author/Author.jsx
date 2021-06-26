@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withPrefix, Link } from 'gatsby';
-import styles from './Author.module.scss';
+import * as styles from './Author.module.scss';
 
 const Author = ({ author, isIndex }) => (
   <div data-testid="author" className={styles.author}>
