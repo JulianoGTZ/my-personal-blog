@@ -1,8 +1,7 @@
 module.exports = {
   rootDir: '../',
-  transform: {
-    '^.+\\.jsx?$': '<rootDir>/jest/jest-preprocess.js',
-  },
+  moduleFileExtensions: ['js', 'jsx'],
+  testEnvironment:'jest-environment-jsdom',
   testMatch: [
     '**/__tests__/**/*.js',
     '**/?(*.)test.js',
@@ -19,8 +18,7 @@ module.exports = {
       'use-tags-list':'<rootDir>/jest/__mocks__/hooks/use-tags-list.js',
       '@reach/router':'<rootDir>/jest/__mocks__/reach-router.js',
   },
-  testPathIgnorePatterns: ['node_modules', '.cache', 'public'],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  moduleDirectories: ["node_modules", "src"],
   globals: {
     __PATH_PREFIX__: '',
   },

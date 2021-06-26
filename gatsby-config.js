@@ -100,30 +100,24 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
           {
-            resolve: 'gatsby-remark-katex',
+            resolve: `gatsby-remark-relative-images`,
             options: {
-              strict: 'ignore',
+              // [Optional] The root of "media_folder" in your config.yml
+              // Defaults to "static"
+              staticFolderName: 'static',
+              // [Optional] Include the following fields, use dot notation for nested fields
+              // All fields are included by default
+              include: ['featured'],
+              // [Optional] Exclude the following fields, use dot notation for nested fields
+              // No fields are excluded by default
+              exclude: ['featured.skip'],
             },
           },
           {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 960,
-              withWebp: true,
-              ignoreFileExtensions: [],
-            },
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 1024 },
           },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: { wrapperStyle: 'margin-bottom: 1.0725rem' },
-          },
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          'gatsby-remark-external-links',
         ],
       },
     },
