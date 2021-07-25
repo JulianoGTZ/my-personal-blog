@@ -9,7 +9,7 @@ tags:
   - "Git"
   - "Data Structures"
   - "Deep Dive"
-description: "How does Git save our files? In what data structures are our files persisted? Let's get a better understanding of how Git arranges its data by exploring the existing data structures under the hood"
+description: "How does Git save our files? In which data structures are our files persisted? Let's better understand how Git arranges our data by exploring the existing data structures under the hood. "
 socialImage: "/media/git-database-flow.png"
 ---
 
