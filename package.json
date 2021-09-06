@@ -86,7 +86,7 @@
     "react-dev-utils": "^11.0.4",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "16.13.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.1.0",
     "socket.io": "^4.1.2",
     "ssri": "^8.0.1",
     "tar": "^6.1.11",
