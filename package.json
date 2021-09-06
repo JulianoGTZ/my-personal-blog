@@ -41,7 +41,7 @@
     "bluebird": "^3.7.2",
     "browserlist": "^1.0.1",
     "classnames": "^2.2.6",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^8.3.0",
     "execa": "^4.0.3",
     "gatsby": "2.32.13",
     "gatsby-link": "^2.2.29",
