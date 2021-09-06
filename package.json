@@ -114,7 +114,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "eslint-watch": "6.0.1",
+    "eslint-watch": "7.0.0",
     "gh-pages": "2.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.1.0",
