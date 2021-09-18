@@ -3,6 +3,7 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': '<rootDir>/jest/jest-preprocess.js',
   },
+  testEnvironment: '<rootDir>/jest/custom-jest-environment.js',
   testMatch: [
     '**/__tests__/**/*.js',
     '**/?(*.)test.js',
