@@ -6,7 +6,7 @@ const postCssPlugins = require('./postcss-config.js');
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
-    url: siteConfig.url,
+    siteUrl: siteConfig.url,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
@@ -141,9 +141,9 @@ module.exports = {
       options: {
         query: `
           {
-            site {
-              siteMetadata {
-                siteUrl: url
+            wp {
+              generalSettings {
+                siteUrl
               }
             }
             allSitePage(
@@ -151,17 +151,19 @@ module.exports = {
                 path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
               }
             ) {
-              edges {
-                node {
-                  path
-                }
+              node {
+                path
               }
             }
           }
         `,
         output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
+        resolveUrl: ({site, allSitePage}) => {
+          //Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+          return site.wp.generalSettings.url
+        },
+        serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
+          url: site.siteMetadata.siteUrl + node.path,
           changefreq: 'daily',
           priority: 0.7,
         })),
