@@ -70,7 +70,7 @@
     "node-notifier": "^10.0.0",
     "node-sass": "^4.13.1",
     "normalize-scss": "^7.0.1",
-    "postcss-pxtorem": "4.0.1",
+    "postcss-pxtorem": "5.1.1",
     "prismjs": "^1.24.0",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
