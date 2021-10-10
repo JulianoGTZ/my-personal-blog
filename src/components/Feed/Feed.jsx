@@ -61,22 +61,22 @@ const edge = PropTypes.shape({
   node: PropTypes.shape({
     fields: PropTypes.shape({
       slug: PropTypes.string.isRequired,
-      tagSlugs: PropTypes.arrayOf(PropTypes.string).isRequired,
+      tagSlugs: PropTypes.arrayOf(PropTypes.string),
     }),
     frontmatter: PropTypes.shape({
       date: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
-      tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string),
       title: PropTypes.string.isRequired,
     }),
-    id: PropTypes.string.isRequired,
-    html: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    html: PropTypes.string,
   }),
 });
 
 Feed.propTypes = {
-  edges: PropTypes.arrayOf(edge).isRequired,
+  edges: PropTypes.arrayOf(edge),
 };
 
 export default Feed;
