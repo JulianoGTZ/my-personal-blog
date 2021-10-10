@@ -163,7 +163,7 @@ module.exports = {
           return site.wp.generalSettings.siteUrl
         },
         serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
-          url: site.siteMetadata.siteUrl + node.path,
+          url: site.wp.generalSettings.siteUrl + node.path,
           changefreq: 'daily',
           priority: 0.7,
         })),
