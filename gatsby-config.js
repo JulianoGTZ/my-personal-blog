@@ -158,8 +158,8 @@ module.exports = {
           }
         `,
         output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
+        serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
+          url: `${site.wp.generalSettings.siteUrl}${node.path}`,
           changefreq: 'daily',
           priority: 0.7,
         })),
