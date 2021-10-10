@@ -1,5 +1,6 @@
 exports.createPages = require('./gatsby/create-pages');
 exports.onCreateNode = require('./gatsby/on-create-node');
+
 exports.onCreateWebpackConfig = helper => {
     const { stage, actions, getConfig } = helper
     if (stage === "develop" || stage === 'build-javascript') {
