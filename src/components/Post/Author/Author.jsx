@@ -11,7 +11,7 @@ const Author = () => {
       <p className={styles.author__bio} data-testid="author-bio-paragraph">
         {author.bio}
         <a
-          className={styles['author__bio-twitter']}
+          className={styles.author__bioTwitter}
           href={getContactHref('twitter', author.contacts.twitter)}
           rel="noopener noreferrer"
           target="_blank"

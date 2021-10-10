@@ -25,6 +25,7 @@ module.exports = {
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
     'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off' ,
     'import/extensions': 'off'
   },
 };

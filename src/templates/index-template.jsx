@@ -70,7 +70,7 @@ IndexTemplate.propTypes = {
     allMarkdownRemark: PropTypes.any.isRequired,
   }).isRequired,
   pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
+    tag: PropTypes.string,
     currentPage: PropTypes.number.isRequired,
     prevPagePath: PropTypes.string.isRequired,
     nextPagePath: PropTypes.string.isRequired,

@@ -9,14 +9,14 @@ const Menu = ({ menu }) => (
       {menu.map((item, index) => (
         <li
           id={`${item.path}-${index}`}
-          className={styles['menu__list-item']}
+          className={styles.menu__listItem}
           key={item.path}
         >
           <Link
             to={item.path}
             data-testid={`menu-list-item-${index}`}
-            className={styles['menu__list-item-link']}
-            activeClassName={styles['menu__list-item-link--active']}
+            className={styles.menu__listItemLink}
+            activeClassName={styles.menu__listItemLinkActive}
           >
             {item.label}
           </Link>

@@ -100,12 +100,8 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
           {
-            resolve: 'gatsby-remark-katex',
-            options: {
-              strict: 'ignore',
-            },
+            resolve: 'gatsby-remark-relative-images-V2',
           },
           {
             resolve: 'gatsby-remark-images',
@@ -189,6 +185,10 @@ module.exports = {
         postCssPlugins: [...postCssPlugins],
         cssLoaderOptions: {
           camelCase: false,
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
         },
       },
     },
