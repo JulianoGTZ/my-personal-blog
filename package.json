@@ -96,6 +96,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "27.2.5",
     "jest-cli": "27.2.5",
+    "react-dev-utils": "^11.0.4",
     "rimraf": "3.0.2"
   }
 }
