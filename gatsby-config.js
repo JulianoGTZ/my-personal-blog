@@ -158,10 +158,10 @@ module.exports = {
           }
         `,
         output: '/sitemap.xml',
-        resolveUrl: ({site, allSitePage}) => {
-          //Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
-          return site.wp.generalSettings.siteUrl
-        },
+        resolveUrl: ({site}) => 
+          // Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+           site.wp.generalSettings.siteUrl
+        ,
         serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
           url: site.wp.generalSettings.siteUrl + node.path,
           changefreq: 'daily',
