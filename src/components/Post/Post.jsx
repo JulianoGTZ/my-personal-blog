@@ -15,7 +15,7 @@ const Post = ({ post }) => {
 
   return (
     <div className={styles.post} data-testid="post-page">
-      <Link className={styles['post__home-button']} to="/" data-testid="post-header">
+      <Link className={styles.post__homeButton} to="/" data-testid="post-header">
         All Articles
       </Link>
 

@@ -20,7 +20,7 @@ const Author = ({ author, isIndex }) => (
       <h1 className={styles.author__title} data-testid="author-title-link-h1">
         <Link
           data-testid="author-title-link"
-          className={styles['author__title-link']}
+          className={styles.author__titleLink}
           to="/"
         >
           {author.name}
@@ -30,7 +30,7 @@ const Author = ({ author, isIndex }) => (
       <h2 className={styles.author__title} data-testid="author-title-link-h2">
         <Link
           data-testid="author-title-link"
-          className={styles['author__title-link']}
+          className={styles.author__titleLink}
           to="/"
         >
           {author.name}

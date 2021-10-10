@@ -176,6 +176,10 @@ module.exports = {
         postCssPlugins: [...postCssPlugins],
         cssLoaderOptions: {
           camelCase: false,
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
         },
       },
     },

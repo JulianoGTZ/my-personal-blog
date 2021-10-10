@@ -11,11 +11,11 @@ const Contacts = ({ contacts }) => (
         !contacts[name] ? null : (
           <li
             data-testid={`contact-item-${name}`}
-            className={styles['contacts__list-item']}
+            className={styles.contacts__listItem}
             key={name}
           >
             <a
-              className={styles['contacts__list-item-link']}
+              className={styles.contacts__listItemLink}
               href={getContactHref(name, contacts[name])}
               rel="noopener noreferrer"
               target="_blank"
