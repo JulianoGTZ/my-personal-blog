@@ -158,11 +158,6 @@ module.exports = {
           }
         `,
         output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
-          url: `${site.wp.generalSettings.siteUrl}${node.path}`,
-          changefreq: 'daily',
-          priority: 0.7,
-        })),
       },
     },
     {
