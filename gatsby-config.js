@@ -159,10 +159,7 @@ module.exports = {
             }
           }
         `,
-        resolveSiteUrl: ({ site, allSitePage }) => {
-
-          return site.siteMetadata.siteUrl
-        },
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
         resolvePages: (data) => data.allSitePage.nodes,
       }
     },
