@@ -1,5 +1,6 @@
 module.exports = {
   url: 'https://julianogtz.github.io/my-personal-blog/',
+  siteUrl: 'https://julianogtz.github.io/my-personal-blog/',
   pathPrefix: 'my-personal-blog/',
   title: 'Blog by Juliano Lima',
   subtitle:
