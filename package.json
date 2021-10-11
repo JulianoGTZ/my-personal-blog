@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
-    "build": "yarn run clean && gatsby build --prefix-paths",
+    "build": "yarn run clean && gatsby build --prefix-paths --verbose",
     "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d docs -b gh-pages",
     "gh-pages-deploy": "node ./scripts/deploy.js",
     "clean": "rimraf .cache public",
