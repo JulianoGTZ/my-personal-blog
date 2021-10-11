@@ -1,12 +1,11 @@
-
-   
 const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
-    siteUrl: siteConfig.url,
+    url: siteConfig.url,
+    siteUrl: siteConfig.siteUrl,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
@@ -50,7 +49,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                site_url: url
+                siteUrl
                 title
                 description: subtitle
               }
@@ -138,36 +137,31 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-sitemap',
+      output: '/sitemap.xml',
+      exclude: [
+        `/dev-404-page`,
+        `/404`,
+        `/404.html`,
+        `/offline-plugin-app-shell-fallback`,
+      ],
       options: {
         query: `
           {
-            wp {
-              generalSettings {
+            site {
+              siteMetadata {
                 siteUrl
               }
             }
-            allSitePage(
-              filter: {
-                path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-              }
-            ) {
-              node {
-                path
-              }
+            allSitePage {
+                nodes {
+                  path
+                }
             }
           }
         `,
-        output: '/sitemap.xml',
-        resolveUrl: ({site}) => 
-          // Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
-           site.wp.generalSettings.siteUrl
-        ,
-        serialize: ({ site, allSitePage }) => allSitePage.nodes.map((node) => ({
-          url: site.wp.generalSettings.siteUrl + node.path,
-          changefreq: 'daily',
-          priority: 0.7,
-        })),
-      },
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        resolvePages: (data) => data.allSitePage.nodes,
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
