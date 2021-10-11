@@ -56,7 +56,7 @@
     "gatsby-remark-images": "^5.11.0",
     "gatsby-remark-katex": "^5.11.0",
     "gatsby-remark-prismjs": "^5.11.0",
-    "gatsby-remark-relative-images-v2": "^0.1.5",
+    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-remark-responsive-iframe": "^4.11.0",
     "gatsby-remark-smartypants": "^4.11.0",
     "gatsby-source-filesystem": "^3.14.0",
