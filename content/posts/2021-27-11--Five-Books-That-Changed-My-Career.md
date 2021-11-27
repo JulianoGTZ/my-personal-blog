@@ -83,7 +83,7 @@ This book by **David Heinemeier Hansson** and **Jason Fried** helped me a lot in
 
 Be aware that you’re not going to be delighted by scientific evidence about doing this or that. **It’s a very opinionated book, showing the empiric knowledge about what worked(and still working) for 37 signals as a fully remote company.** 
 
-Although some of the situations presented sometimes seem exaggerated, for me it was possible to draw a parallel with my reality and apply many of the ideas to my daily life.
+Although some of the situations presented sometimes seem exaggerated, for me it was possible to draw a parallel with my reality and apply many of the ideas to my work routine.
 
 Furthermore, this book is very valuable for communication at all with very valuable tips that you can apply even if you're not working remotely. 
 
