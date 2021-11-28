@@ -1,5 +1,5 @@
 ---
-title: "Five Books that Changed My Career as Software Engineer"
+title: "Five Books that Changed My Career as a Software Engineer"
 date: "2021-11-27T22:40:32.169Z"
 template: "post"
 draft: false
@@ -52,8 +52,7 @@ I really **love** this book by **Chad Fowler**. I read it in a period in which I
 
 At that time I was asking myself: what should I study now? am I a full-stack developer? should I focus on backend? or frontend? what programming languages should I learn? **This book has helped me a lot to answer all of these questions**.
 
-The book is strictly about career development and it has a lot of insights about how to perform better as a programmer and explore the best opportunities for you.
-In this book, I’ve discovered how much I really love to work with programming, and has opened my eyes to some ways to do it better.
+The book is strictly about career development and it has a lot of insights about how to perform better as a programmer and explore the best opportunities for you. In this book, I’ve discovered how much I really love to work with programming and has opened my eyes to some ways to improve.
 
 ## The Pragmatic Programmer - your journey to mastery(20th Anniversary Edition)
 
@@ -73,11 +72,9 @@ I strongly suggest the latest edition because it is using examples with updated 
 
 The oldest book here. A classic written by **W. J. King** in 1944. A book with a message so timeless, so universal, that it transcends generations. Good news: *it’s a revised and updated edition, so don't mind about unused terminologies or having a very struggling reading*.
 
-This book is amazing to understand the corporate structure and how you should behave to improve your professional effectiveness. The book it’s not about acting rather about keeping in mind some directives that are going to facilitate your job and the projects that you are working on considering the nature of the work, your supervisor, your relations, the products, your career, and your behavior. 
+This book is amazing to understand the corporate structure and how you should behave to improve your professional effectiveness. The book it’s not about acting like a corp robot rather about keeping in mind some directives that are going to facilitate your job and the projects that you are working on considering the nature of the work, your supervisor, your relations, the products involved, your career, and your behavior.
 
 This book transcends the engineering field and their concepts could be applied to every occupation I guess. 
-
-
 ## Remote: Office Not Required
 ![Remote - Office not required](/media/remote-office-not-required(cover).jpg)
 *Source: [Amazon](https://images.app.goo.gl/4kufdZp5Cc8Kf45H6)*
@@ -86,7 +83,7 @@ This book by **David Heinemeier Hansson** and **Jason Fried** helped me a lot in
 
 Be aware that you’re not going to be delighted by scientific evidence about doing this or that. **It’s a very opinionated book, showing the empiric knowledge about what worked(and still working) for 37 signals as a fully remote company.** 
 
-Although some of the situations presented sometimes seem exaggerated, but for me it was possible to draw a parallel with my reality and apply many of the ideas to my daily life.
+Although some of the situations presented sometimes seem exaggerated, for me it was possible to draw a parallel with my reality and apply many of the ideas to my work routine.
 
 Furthermore, this book is very valuable for communication at all with very valuable tips that you can apply even if you're not working remotely. 
 
@@ -98,7 +95,7 @@ Another very good source of knowledge about it is [The Basecamp Guide to Interna
 
 **Just brilliant**. This book by **Todd Hoff** presents some very interesting and complex concepts about networks, cloud services and explains what happens under the hood when you watch something on a huge streaming service like Netflix.
 
-It’s not only about these hard concepts being explained in a very enjoyable way to read but also **this book has opened my mind about presenting content**. The terminology, the figures, the analogies, all of these aspects in this book have helped a lot to make my own presentations. 
+Not only about these hard concepts being explained in a very enjoyable way to read but also **this book has opened my mind about presenting content**. The terminology, the figures, the analogies, all of these aspects in this book have helped a lot to make my own presentations. 
 
 **Explaining complex concepts through diagrams and flows has maximized a lot of my skills and my impact on the teams I’ve worked on**. Lots of tips to do that I've borrowed from this great book.
 
