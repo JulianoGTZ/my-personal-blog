@@ -9,7 +9,7 @@ tags:
   - "Reading"
   - "Books"
   - "Career"
-description: "I'd like to present five books that have changed my mind about software development showing me lots of concepts, techniques and tips. Let's see them and why I think they were so valuable to me"
+description: "I'd like to present five books that have changed my mind about software development showing me lots of concepts, techniques and tips. Let's see them and why I they were so valuable to me"
 socialImage: "/media/books-and-technology.jpeg"
 ---
 
