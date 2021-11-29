@@ -79,7 +79,7 @@ This book transcends the engineering field and its concepts could be applied to 
 ![Remote - Office not required](/media/remote-office-not-required(cover).jpg)
 *Source: [Amazon](https://images.app.goo.gl/4kufdZp5Cc8Kf45H6)*
 
-This book by **David Heinemeier Hansson** and **Jason Fried** helped me a lot in the 2020's COVID pandemic(and it's still helping). **I’m not a big fan of remote work**, and when the pandemic started I really worried about my performance at my job because I’ve never worked this way before. 
+This book by **David Heinemeier Hansson** and **Jason Fried** helped me a lot in the 2020's COVID pandemic (and it's still helping). **I’m not a big fan of remote work**, and when the pandemic started I really worried about my performance at my job because I’ve never worked this way before. 
 
 Be aware that you’re not going to be delighted by scientific evidence about doing this or that. **It’s a very opinionated book, presenting the empiric knowledge about what worked(and is still working) for [37 signals](https://37signals.com/) as a fully remote company.** 
 
