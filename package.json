@@ -40,7 +40,7 @@
     "classnames": "^2.2.6",
     "eslint-config-prettier": "^8.3.0",
     "execa": "^4.0.3",
-    "gatsby": "3.14.2",
+    "gatsby": "3.14.6",
     "gatsby-plugin-catch-links": "^3.14.0",
     "gatsby-plugin-feed": "^3.14.0",
     "gatsby-plugin-google-gtag": "^3.14.0",
