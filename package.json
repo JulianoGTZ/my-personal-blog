@@ -94,7 +94,7 @@
     "gh-pages": "3.2.3",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.5.0",
-    "jest-cli": "27.2.5",
+    "jest-cli": "27.5.1",
     "react-dev-utils": "^11.0.4",
     "rimraf": "3.0.2"
   }
