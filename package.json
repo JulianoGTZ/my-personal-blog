@@ -62,7 +62,7 @@
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
-    "katex": "^0.13.18",
+    "katex": "^0.13.24",
     "lodash": "^4.17.15",
     "lost": "8.3.1",
     "moment": "^2.24.0",
