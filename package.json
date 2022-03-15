@@ -48,7 +48,7 @@
     "gatsby-plugin-optimize-svgs": "^1.0.3",
     "gatsby-plugin-react-helmet": "^4.14.0",
     "gatsby-plugin-sass": "^4.14.0",
-    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-plugin-sitemap": "^4.10.0",
     "gatsby-remark-autolink-headers": "^4.11.0",
     "gatsby-remark-copy-linked-files": "^4.11.0",
@@ -78,7 +78,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.7",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@testing-library/react": "^12.1.3",
