@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   disqusShortname: 'https-julianogtz-github-io-my-personal-blog',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-177351255-1',
+  googleAnalyticsId: 'G-ZF41154TC6',
   useKatex: false,
   menu: [
     {
