@@ -1,0 +1,66 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: cimg/node:16.15.0
+  working_directory: ~/juliano-lima-personal-blog
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "yarn.lock" }}
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn lint
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn test --runInBand --no-cache
+
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn test:coverage --runInBand --no-cache
+      - save_cache:
+          key: coverage-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - coverage
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
+      - coverage:
+          requires:
+            - build

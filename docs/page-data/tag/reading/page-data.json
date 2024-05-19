@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-template-jsx",
+    "path": "/tag/reading",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Blog by Juliano Lima","subtitle":"Software Engineer, Computer Scientist, Cartoons Analyst, and Amateur Commentator Football."}},"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/posts/five-books-that-changed-my-career-as-a-software-engineer","categorySlug":"/category/carrer/"},"frontmatter":{"title":"Five Books that Changed My Career as a Software Engineer","date":"2021-11-27T22:40:32.169Z","category":"Carrer","description":"I'd like to present five books that have changed my mind about software development showing me lots of concepts, techniques and tips. Let's see them and why I they were so valuable to me"}}}]}},"pageContext":{"tag":"Reading","currentPage":0,"postsLimit":4,"postsOffset":0,"prevPagePath":"/tag/reading","nextPagePath":"/tag/reading/page/1","hasPrevPage":false,"hasNextPage":false}},
+    "staticQueryHashes": ["251939775","3942705351","401334301"]}
