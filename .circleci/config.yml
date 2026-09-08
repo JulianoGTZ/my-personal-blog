@@ -6,6 +6,10 @@ defaults: &defaults
   working_directory: ~/juliano-lima-personal-blog
 
 jobs:
+  # Despite the name, this job only installs and caches dependencies; it does
+  # not compile the site. The name is kept because it is a required status
+  # check on main - renaming it would leave that check permanently pending.
+  # The actual site compile lives in `site-build` below.
   build:
     <<: *defaults
     steps:
@@ -18,6 +22,24 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ checksum "yarn.lock" }}
+
+  # Compiles the site the same way the deploy workflow does, so a broken build
+  # fails the pull request instead of only surfacing after merge, during deploy.
+  site-build:
+    <<: *defaults
+    environment:
+      NODE_ENV: production
+      # Gatsby 4 sizes its query-worker pool from the host's core count, not
+      # the container's limit, so it spawned 17 workers on a 2 vCPU / 4 GB
+      # executor and got OOM-killed mid webpack compile. Pin it to the cores
+      # this job actually has.
+      GATSBY_CPU_COUNT: 2
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn build
 
   lint:
     <<: *defaults
@@ -55,6 +77,9 @@ workflows:
   test:
     jobs:
       - build
+      - site-build:
+          requires:
+            - build
       - lint:
           requires:
             - build
