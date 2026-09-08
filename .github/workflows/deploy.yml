@@ -18,27 +18,71 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # CircleCI (build/lint/test/site-build/coverage) reports as commit statuses on
-  # the same SHA, independently of this workflow. Gate the actual deploy on
-  # those passing first, so a red CircleCI run never ships to Pages.
+  # CircleCI reports as commit *statuses* (the legacy Statuses API), not as
+  # check runs. GitHub's UI shows both in one list, which makes them look
+  # interchangeable, but the APIs are separate - and every off-the-shelf
+  # "wait for checks" action reads the Checks API only. That is why this gate
+  # went green for months without ever having looked at CircleCI once: it was
+  # polling a list CircleCI never writes to.
   #
-  # check-regexp scopes the wait to the CircleCI contexts only. Without it the
-  # action watches every check on the SHA and fails on the first one that is
-  # not successful - including Dependabot's security-update runs, which are
-  # unrelated to whether the site builds and which land on whatever commit is
-  # at the head of main. That is what blocked the deploy of the Gatsby 4 merge
-  # (c5bdb41): five Dependabot checks failed at 11:03, the gate gave up at
-  # 11:04, and site-build went green at 11:06.
+  # So poll the statuses directly. A required context that is missing or
+  # pending keeps us waiting; failure or error stops the deploy.
   wait-for-circleci:
     runs-on: ubuntu-latest
     steps:
-      - uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.sha }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          check-regexp: '^ci/circleci: '
-          wait-interval: 15
-          allowed-conclusions: success
+      - name: Wait for the CircleCI commit statuses
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          required=(
+            "ci/circleci: build"
+            "ci/circleci: lint"
+            "ci/circleci: test"
+            "ci/circleci: site-build"
+            "ci/circleci: coverage"
+          )
+
+          # site-build alone takes ~3 min, and the four jobs after it fan out
+          # only once build has passed.
+          deadline=$(( SECONDS + 1800 ))
+
+          while :; do
+            # The combined-status endpoint returns the most recent status per
+            # context, so no de-duplication is needed here.
+            gh api "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/status?per_page=100" \
+              --jq '.statuses[] | "\(.state)\t\(.context)"' > statuses.tsv
+
+            waiting=()
+            for context in "${required[@]}"; do
+              state=$(awk -F'\t' -v c="$context" '$2 == c { print $1; exit }' statuses.tsv)
+              case "$state" in
+                success)
+                  ;;
+                failure|error)
+                  echo "::error::${context} reported ${state} - not deploying."
+                  exit 1
+                  ;;
+                *)
+                  waiting+=("$context")
+                  ;;
+              esac
+            done
+
+            if [ ${#waiting[@]} -eq 0 ]; then
+              echo "All ${#required[@]} CircleCI statuses passed."
+              exit 0
+            fi
+
+            if [ $SECONDS -ge $deadline ]; then
+              echo "::error::Timed out after 30 min waiting for: ${waiting[*]}"
+              exit 1
+            fi
+
+            echo "Waiting for: ${waiting[*]}"
+            sleep 15
+          done
 
   build:
     needs: wait-for-circleci
