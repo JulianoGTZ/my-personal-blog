@@ -78,7 +78,7 @@
     "sass": "^1.104.0"
   },
   "devDependencies": {
-    "@babel/core": "7.17.10",
+    "@babel/core": "7.18.5",
     "@babel/preset-env": "7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@testing-library/react": "^12.1.5",
@@ -97,5 +97,8 @@
     "jest-cli": "27.5.1",
     "react-dev-utils": "^12.0.1",
     "rimraf": "3.0.2"
+  },
+  "resolutions": {
+    "@babel/core": "7.18.5"
   }
 }
