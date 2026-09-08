@@ -18,9 +18,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # CircleCI (build/lint/test/coverage) reports as commit statuses on the same
-  # SHA, independently of this workflow. Gate the actual deploy on those
-  # passing first, so a red CircleCI run never ships to Pages.
+  # CircleCI (build/lint/test/site-build/coverage) reports as commit statuses on
+  # the same SHA, independently of this workflow. Gate the actual deploy on
+  # those passing first, so a red CircleCI run never ships to Pages.
+  #
+  # check-regexp scopes the wait to the CircleCI contexts only. Without it the
+  # action watches every check on the SHA and fails on the first one that is
+  # not successful - including Dependabot's security-update runs, which are
+  # unrelated to whether the site builds and which land on whatever commit is
+  # at the head of main. That is what blocked the deploy of the Gatsby 4 merge
+  # (c5bdb41): five Dependabot checks failed at 11:03, the gate gave up at
+  # 11:04, and site-build went green at 11:06.
   wait-for-circleci:
     runs-on: ubuntu-latest
     steps:
@@ -28,7 +36,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          running-workflow-name: wait-for-circleci
+          check-regexp: '^ci/circleci: '
           wait-interval: 15
           allowed-conclusions: success
 
