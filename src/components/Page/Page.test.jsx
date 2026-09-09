@@ -18,7 +18,7 @@ describe('Page', () => {
 
     const { getByTestId } = render(<Page {...props} />);
     getByTestId('page-container');
-    expect(scrollIntoViewMock).toBeCalled();
+    expect(scrollIntoViewMock).toHaveBeenCalled();
   });
 
   it('Should show the title', () => {
