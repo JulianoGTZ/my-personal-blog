@@ -18,6 +18,9 @@
   "repository": "https://github.com/JulianoGTZ/juliano-lima-personal-blog",
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>, Juliano Lima <julianodgtz@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0 <26"
+  },
   "keywords": [
     "gatsby",
     "graphql",
