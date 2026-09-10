@@ -9,6 +9,7 @@
     "deploy": "yarn run clean && gatsby build --prefix-paths && gh-pages -d docs -b gh-pages",
     "gh-pages-deploy": "node ./scripts/deploy.js",
     "clean": "rimraf .cache public",
+    "optimize:svg": "svgo -r -f static/media",
     "lint": "eslint --cache --ext .js,.jsx .",
     "test": "jest --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
@@ -45,7 +46,6 @@
     "gatsby-plugin-feed": "^4.25.0",
     "gatsby-plugin-google-gtag": "^4.25.0",
     "gatsby-plugin-manifest": "^4.25.0",
-    "gatsby-plugin-optimize-svgs": "^1.0.3",
     "gatsby-plugin-react-helmet": "^5.25.0",
     "gatsby-plugin-sass": "^5.25.0",
     "gatsby-plugin-sharp": "^4.25.1",
@@ -97,7 +97,8 @@
     "jest-cli": "30.2.0",
     "jest-environment-jsdom": "30.2.0",
     "react-dev-utils": "^12.0.1",
-    "rimraf": "3.0.2"
+    "rimraf": "3.0.2",
+    "svgo": "4.1.0"
   },
   "resolutions": {
     "@babel/core": "7.28.4"
