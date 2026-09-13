@@ -12,7 +12,7 @@ description: "Do you have a blog? do you write articles? If you are a software d
 socialImage: "/media/summerios.jpg"
 ---
 
-![Cuneiform script created by the Sumerians around 3,500 B.C. - Source: InfoEscola](/media/summerios.jpg)
+![Cuneiform script created by the Sumerians around 3,500 B.C. - Source: InfoEscola](../../static/media/summerios.jpg)
 *The Cuneiform script created by the Sumerians around 3,500 BC - Source: [InfoEscola](https://www.infoescola.com/historia/sumerios/)*
 
 **Hello, Welcome**. This is the pilot post of my blog, the first article of many that I'm going to post here :)
@@ -36,7 +36,7 @@ I like to think that just as the Sumerians in the ancient Mesopotamian civilizat
 
 How [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=asc_df_B001GSTOAM/?tag=googleshopp00-20&linkCode=df0&hvadid=379765265654&hvpos=&hvnetw=g&hvrand=2551010271922584819&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001773&hvtargid=pla-406130706465&psc=1) address, as a text that is not clear a code that is not expressive sometimes almost **needs a work of paleontology to understand what is happening under the hood**.
 
-![The number of wtfs per minute says a lot about the quality of the code](/media/wtfm.jpg)
+![The number of wtfs per minute says a lot about the quality of the code](../../static/media/wtfm.jpg)
 
 <figure>
 	<blockquote>
@@ -56,7 +56,7 @@ In my opinion, **no**. Software development is not only about programming, **but
 To code better you need to have a broad vision about the reason that you're coding like: **the business problem**, **the stakeholder's motivation**, **what value this development is bringing?**, etc.
 
 Talking a little bit about set theory, the programmer is at the **intersection** between the concrete world of business and the abstract world of software implementations.
-![Intersection between software developer with the world of business and technology](/media/developer-intersection.png)
+![Intersection between software developer with the world of business and technology](../../static/media/developer-intersection.png)
 
 Part of my job as a software developer is to transmit the ideas that round development in a clear and concrete way to all *stakeholders*. The problem understanding and good communication optimize the required effort by everyone involved.
 
@@ -80,7 +80,7 @@ Analogies are a great alternative to help materialize complex concepts. They are
 
 Visual elements like diagrams are a very powerful tool for presenting complex ideas in an agnostic way of technology. Some solutions like [Miro](https://miro.com/) provide a wide range of diagrams and tools to make an interactive presentation.
 
-![Diagram example made on Miro](/media/flow.png)
+![Diagram example made on Miro](../../static/media/flow.png)
 *Diagram example made on [Miro](https://miro.com)*
 
 <figure>
