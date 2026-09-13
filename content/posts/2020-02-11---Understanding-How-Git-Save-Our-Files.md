@@ -13,7 +13,7 @@ description: "How does Git save our files? In which data structures are our file
 socialImage: "/media/git-database-flow.png"
 ---
 
-![Git Flow. - Source: Git Docs](/media/git-database-flow.png)
+![Git Flow. - Source: Git Docs](../../static/media/git-database-flow.png)
 *Source: [Git Docs](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)*
 
 Have you ever thought about how Git persists our files? Although it is practically invisible, this persistence has many interesting aspects for those who like **data structures**.
@@ -45,7 +45,7 @@ Metaphorically it is as if Git managed to search for an element in its database 
 
 Git is guided by hashes. We can see this by running a **git-log** and see lots of them assigned to commits.
 
-![Git Log figure with many commits](/media/hashes-everywhere.jpg)
+![Git Log figure with many commits](../../static/media/hashes-everywhere.jpg)
 
 **Conceptualizing**: A hash is a fixed-length string calculated by an algorithm specialized in it (such as MD5, SHA1) where the objective is to have a single result corresponding to the input parameters (aka seed).
 
@@ -71,7 +71,7 @@ The result of the function is deterministic, that is, given the same input, the 
 
 In order to talk about the next data structure we will need to understand a little more about the structure of commits:
 
-![Readme update commit](media/commit-update-readme.png)
+![Readme update commit](../../static/media/commit-update-readme.png)
 
 With the hash of a commit in hand, we can use a function to read its contents: the **cat-file** function. Just use it by passing **- p** (print) and the hash that we observe as parameters:
 
@@ -79,7 +79,7 @@ With the hash of a commit in hand, we can use a function to read its contents: t
 
 Executing the command we see the following information:
 
-![Details of the readme update commit](/media/git-commit-update-readme-detailed.png)
+![Details of the readme update commit](../../static/media/git-commit-update-readme-detailed.png)
 
 * **tree**: The hash corresponding to the repository's directory and file structure (*More details below*)
 * **parent**: The previous commit hash.
@@ -92,7 +92,7 @@ We can conceptualize that the commit is a snapshot of the current configuration 
 This exact picture of the repository is in the `tree` attribute of the commit. That's cool but..., what is a **tree**?
 ### Tree
 
-![Tree attribute highlighted in commit details](/media/tree-highlighted-in-commit-update-readme.png)
+![Tree attribute highlighted in commit details](../../static/media/tree-highlighted-in-commit-update-readme.png)
 
 Not far from translation, it is a reference tree. Computationally, we are talking about a data structure with different connections between nodes of information, but different from a linear structure such as an array or a list, we have depth in navigability.
 
@@ -102,11 +102,11 @@ Now that we know how to see the information inside a Git hash, just run the foll
 
 And we have as a result:
 
-![Result of the command executed above:](/media/commit-tree-content.png)
+![Result of the command executed above:](../../static/media/commit-tree-content.png)
 
 The result, although apparently not saying much, is representing exactly the structure of the repository that I am exploring as an example:
 
-![Repository](/media/image-repository.jpg)
+![Repository](../../static/media/image-repository.jpg)
 
 The versioning tree has two possible types of stored values:
 * **Blob**: is any binary file in the repository. In the example above is the **README.md**
@@ -114,7 +114,7 @@ The versioning tree has two possible types of stored values:
 
 The figure below represents exactly the folder and file structure of the repository.
 
-![Example of a tree](media/how-git-works-tree.png)
+![Example of a tree](../../static/media/how-git-works-tree.png)
 
 We can see that the **leaf node** (the node at the end of the tree) will always be a Blob. In practice this means that Git does not version empty folders. A **tree** will only exist if there is a reference to a file inside that folder.
 

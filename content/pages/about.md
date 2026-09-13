@@ -23,7 +23,7 @@ I love burgers, movies, different types of beer, football(especially **Corinthia
 
 I'm a fan of **pair-programming**. Usually, I'm programming with **Jorge**.
 
-![Jorge, a very cute cat](/media/jorge.jpg)
+![Jorge, a very cute cat](../../static/media/jorge.jpg)
 
 ### Copyright
 
