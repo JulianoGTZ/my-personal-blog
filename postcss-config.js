@@ -3,7 +3,7 @@ const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 
 module.exports = [
-  lost(),
+  lost({ gutter: '1.875rem' }),
   pxtorem({
     rootValue: 16,
     unitPrecision: 5,
