@@ -71,7 +71,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                   filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
                 ) {
                   edges {
@@ -136,14 +136,19 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-sitemap',
-      output: '/sitemap.xml',
-      exclude: [
-        `/dev-404-page`,
-        `/404`,
-        `/404.html`,
-        `/offline-plugin-app-shell-fallback`,
-      ],
       options: {
+        // Keep emitting into /sitemap, which is where this site's sitemap has
+        // always been published. gatsby-plugin-sitemap v6 changed the default
+        // output from `/sitemap` to `/`, which would have silently moved the
+        // public URL to /sitemap-index.xml.
+        //
+        // `output` and an `exclude` array previously sat out here, as siblings
+        // of `resolve` rather than inside `options`, where Gatsby ignores them
+        // - so neither ever took effect. The exclude list is not restored
+        // because the plugin already drops /404, /404.html, /dev-404-page and
+        // the app-shell fallback by default: the generated sitemap contains 17
+        // URLs and none of them are those.
+        output: '/sitemap',
         query: `
           {
             site {
