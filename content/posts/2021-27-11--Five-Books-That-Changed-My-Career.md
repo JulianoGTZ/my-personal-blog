@@ -13,7 +13,7 @@ description: "I'd like to present five books that have changed my mind about sof
 socialImage: "/media/books-and-technology.jpeg"
 ---
 
-![Source: Dreamstime](/media/books-and-technology.jpeg)
+![Source: Dreamstime](../../static/media/books-and-technology.jpeg)
 *Source: [Dreamstime.com](https://www.dreamstime.com/dictionary-modern-library-web-archive-literature-digital-culture-vector-people-reading-books-using-technology-image137941857)*
 
 Hi folks, It has been a long time since my last post. It’s time to back to writing, better late than never(**or better late than even later**).
@@ -44,7 +44,7 @@ I like to think that I’ve anticipated a lot of problems and I've learned valua
 
 ## The Passionate Programmer: Creating a Remarkable Career in Software Development
 
-![The Passionate Programmer: Creating a Remarkable Career in Software Development](/media/the-passionate-programmer(cover).jpg)
+![The Passionate Programmer: Creating a Remarkable Career in Software Development](../../static/media/the-passionate-programmer(cover).jpg)
 *Source: [Amazon](https://images.app.goo.gl/Ya2PZMqa3n9NNzbE8)*
 
 
@@ -56,7 +56,7 @@ The book is strictly about career development and it has a lot of insights about
 
 ## The Pragmatic Programmer - your journey to mastery(20th Anniversary Edition)
 
-![The Pragmatic Programmer - your journey to mastery(20th Anniversary Edition)](/media/the-pragmatic-programmer-your-journey-to-mastery.jpg)
+![The Pragmatic Programmer - your journey to mastery(20th Anniversary Edition)](../../static/media/the-pragmatic-programmer-your-journey-to-mastery.jpg)
 *Source: [Amazon](https://images.app.goo.gl/iZCcYsJFcKYTujMF8)*
 
 A masterpiece by **David Thomas** and **Andrew Hunt**. This book is about career development too, showing topics ranging from **personal responsibility and career development to architectural techniques for keeping your code flexible and easy to adapt and reuse**.
@@ -67,7 +67,7 @@ I strongly suggest the latest edition because it is using examples with updated 
 
 ##  Unwritten Laws of Engineering - Second Edition
 
-![Unwritten Laws of Engineering - Second Edition](/media/the-unwritten-laws-of-engineering(cover).jpg)
+![Unwritten Laws of Engineering - Second Edition](../../static/media/the-unwritten-laws-of-engineering(cover).jpg)
 *Source: [Amazon](https://images.app.goo.gl/SEVHbuMCVc4wPabb8)*
 
 The oldest book here. A classic written by **W. J. King** in 1944. A book with a message so timeless, so universal, that it transcends generations. Good news: *it’s a revised and updated edition, so don't mind about unused terminologies or having a very struggling reading*.
@@ -76,7 +76,7 @@ This book is amazing to understand the corporate structure and how you should be
 
 This book transcends the engineering field and its concepts could be applied to every occupation I guess. 
 ## Remote: Office Not Required
-![Remote - Office not required](/media/remote-office-not-required(cover).jpg)
+![Remote - Office not required](../../static/media/remote-office-not-required(cover).jpg)
 *Source: [Amazon](https://images.app.goo.gl/4kufdZp5Cc8Kf45H6)*
 
 This book by **David Heinemeier Hansson** and **Jason Fried** helped me a lot in the 2020's COVID pandemic (and it's still helping). **I’m not a big fan of remote work**, and when the pandemic started I really worried about my performance at my job because I’ve never worked this way before. 
@@ -90,7 +90,7 @@ Furthermore, this book is very valuable for communication at all with very valua
 Another very good source of knowledge about it is [The Basecamp Guide to Internal Communication](https://basecamp.com/guides/how-we-communicate).  
 
 ## Explain the Cloud Like I'm 10
-![Explain the Cloud Like I'm 10](/media/explain-cloud-like-im-10-years-old.jpg)
+![Explain the Cloud Like I'm 10](../../static/media/explain-cloud-like-im-10-years-old.jpg)
 *Source: [Amazon](https://images.app.goo.gl/9U4JUST45LGj2rhX8)*
 
 **Just brilliant**. This book by **Todd Hoff** presents some very interesting and complex concepts about networks, cloud services and it explains what happens under the hood when you watch something on a huge streaming service like Netflix.
