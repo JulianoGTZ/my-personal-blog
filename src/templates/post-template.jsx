@@ -6,19 +6,11 @@ import Post from '../components/Post';
 import Seo from '../components/Seo';
 import { useSiteMetadata } from '../hooks';
 
-const PostTemplate = ({ data }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-  const { frontmatter } = data.markdownRemark;
-  const { title: postTitle, description: postDescription, socialImage } = frontmatter;
-  const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
-
-  return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage}>
-      <Seo title={siteTitle} description={metaDescription} image={socialImage} article />
-      <Post post={data.markdownRemark} />
-    </Layout>
-  );
-};
+const PostTemplate = ({ data }) => (
+  <Layout>
+    <Post post={data.markdownRemark} />
+  </Layout>
+);
 
 export const query = graphql`
   query PostBySlug($slug: String!) {
@@ -45,6 +37,29 @@ PostTemplate.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     markdownRemark: PropTypes.any.isRequired,
   }).isRequired,
+};
+
+export const Head = ({ data, location }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: postTitle, description, socialImage } = data.markdownRemark.frontmatter;
+
+  return (
+    <Seo
+      title={`${postTitle} - ${siteTitle}`}
+      description={description !== null ? description : siteSubtitle}
+      image={socialImage}
+      pathname={location.pathname}
+      article
+    />
+  );
+};
+
+Head.propTypes = {
+  data: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    markdownRemark: PropTypes.any.isRequired,
+  }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
 };
 
 export default PostTemplate;

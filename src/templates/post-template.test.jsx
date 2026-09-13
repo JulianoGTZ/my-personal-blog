@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import PostTemplate from './post-template';
+import PostTemplate, { Head } from './post-template';
 import markdownRemark from '../../jest/__fixtures__/markdown-remark';
 
 describe('PostTemplate', () => {
@@ -27,6 +27,16 @@ describe('PostTemplate', () => {
     it('Should show the Post container', () => {
       const { getByTestId } = render(<PostTemplate {...props} />);
       getByTestId('post-page');
+    });
+  });
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head {...props} location={{ pathname: '/test/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'test - Test title',
+      );
     });
   });
 });

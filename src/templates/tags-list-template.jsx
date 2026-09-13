@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import { useSiteMetadata, useTagsList } from '../hooks';
 
 const TagsListTemplate = () => {
-  const { title, subtitle } = useSiteMetadata();
   const tags = useTagsList();
 
   return (
-    <Layout title={`Tags - ${title}`} description={subtitle}>
+    <Layout>
       <Sidebar />
       <Page title="Tags">
         <ul>
@@ -30,6 +31,22 @@ const TagsListTemplate = () => {
       </Page>
     </Layout>
   );
+};
+
+export const Head = ({ location }) => {
+  const { title, subtitle } = useSiteMetadata();
+
+  return (
+    <Seo
+      title={`Tags - ${title}`}
+      description={subtitle}
+      pathname={location.pathname}
+    />
+  );
+};
+
+Head.propTypes = {
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
 };
 
 export default TagsListTemplate;

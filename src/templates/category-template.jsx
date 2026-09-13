@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 import Page from '../components/Page';
@@ -29,7 +30,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
       : `${category} - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout>
       <Sidebar isIndex={false} />
       <Page title={category}>
         <Feed edges={edges} />
@@ -90,6 +91,30 @@ CategoryTemplate.propTypes = {
     hasPrevPage: PropTypes.bool.isRequired,
     hasNextPage: PropTypes.bool.isRequired,
   }).isRequired,
+};
+
+export const Head = ({ pageContext, location }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { category, currentPage } = pageContext;
+  const pageTitle = currentPage > 0
+    ? `${category} - Page ${currentPage} - ${siteTitle}`
+    : `${category} - ${siteTitle}`;
+
+  return (
+    <Seo
+      title={pageTitle}
+      description={siteSubtitle}
+      pathname={location.pathname}
+    />
+  );
+};
+
+Head.propTypes = {
+  pageContext: PropTypes.shape({
+    category: PropTypes.string,
+    currentPage: PropTypes.number,
+  }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
 };
 
 export default CategoryTemplate;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import NotFoundTemplate from './not-found-template';
+import NotFoundTemplate, { Head } from './not-found-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 
 describe('NotFoundTemplate', () => {
@@ -42,6 +42,16 @@ describe('NotFoundTemplate', () => {
       const { getByTestId } = render(<NotFoundTemplate  />);
       const title = getByTestId('page-title');
       expect(title.textContent).toBe('NOT FOUND');
+    });
+  });
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head location={{ pathname: '/404/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'Not Found - Test title',
+      );
     });
   });
 });

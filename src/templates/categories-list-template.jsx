@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Page from '../components/Page';
 import { useSiteMetadata, useCategoriesList } from '../hooks';
 
 const CategoriesListTemplate = () => {
-  const { title, subtitle } = useSiteMetadata();
   const categories = useCategoriesList();
 
   return (
-    <Layout title={`Categories - ${title}`} description={subtitle}>
+    <Layout>
       <Sidebar />
       <Page title="Categories">
         <ul>
@@ -33,6 +34,22 @@ const CategoriesListTemplate = () => {
       </Page>
     </Layout>
   );
+};
+
+export const Head = ({ location }) => {
+  const { title, subtitle } = useSiteMetadata();
+
+  return (
+    <Seo
+      title={`Categories - ${title}`}
+      description={subtitle}
+      pathname={location.pathname}
+    />
+  );
+};
+
+Head.propTypes = {
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
 };
 
 export default CategoriesListTemplate;

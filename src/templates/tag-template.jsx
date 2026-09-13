@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 import Page from '../components/Page';
@@ -9,11 +10,8 @@ import Pagination from '../components/Pagination';
 import { useSiteMetadata } from '../hooks';
 
 const TagTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-
   const {
     tag,
-    currentPage,
     prevPagePath,
     nextPagePath,
     hasPrevPage,
@@ -21,10 +19,9 @@ const TagTemplate = ({ data, pageContext }) => {
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout>
       <Sidebar />
       <Page title={tag}>
         <Feed edges={edges} />
@@ -84,6 +81,30 @@ TagTemplate.propTypes = {
     hasPrevPage: PropTypes.bool.isRequired,
     hasNextPage: PropTypes.bool.isRequired,
   }).isRequired,
+};
+
+export const Head = ({ pageContext, location }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { tag, currentPage } = pageContext;
+  const pageTitle = currentPage > 0
+    ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}`
+    : `All Posts tagged as "${tag}" - ${siteTitle}`;
+
+  return (
+    <Seo
+      title={pageTitle}
+      description={siteSubtitle}
+      pathname={location.pathname}
+    />
+  );
+};
+
+Head.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string,
+    currentPage: PropTypes.number,
+  }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
 };
 
 export default TagTemplate;
