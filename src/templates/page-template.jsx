@@ -4,28 +4,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import { useSiteMetadata } from '../hooks';
 
 const PageTemplate = ({ data }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
-  const { frontmatter } = data.markdownRemark;
-  const {
-    title: pageTitle,
-    description: pageDescription,
-    socialImage,
-  } = frontmatter;
-  const metaDescription =
-    pageDescription !== null ? pageDescription : siteSubtitle;
+  const { title: pageTitle } = data.markdownRemark.frontmatter;
 
   return (
-    <Layout
-      title={`${pageTitle} - ${siteTitle}`}
-      description={metaDescription}
-      socialImage={socialImage}
-    >
+    <Layout>
       <Sidebar />
       <Page title={pageTitle}>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />
@@ -55,5 +44,21 @@ PageTemplate.defaultProps = {
     allMarkdownRemark: PropTypes.any.isRequired,
   }).isRequired,
 };
+
+export const Head = ({ data, location }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: pageTitle, description, socialImage } = data.markdownRemark.frontmatter;
+
+  return (
+    <Seo
+      title={`${pageTitle} - ${siteTitle}`}
+      description={description !== null ? description : siteSubtitle}
+      image={socialImage}
+      pathname={location.pathname}
+    />
+  );
+};
+
+/* eslint-enable react/prop-types */
 
 export default PageTemplate;

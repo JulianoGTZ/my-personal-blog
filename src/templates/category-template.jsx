@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 import Page from '../components/Page';
@@ -29,7 +30,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
       : `${category} - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout>
       <Sidebar isIndex={false} />
       <Page title={category}>
         <Feed edges={edges} />
@@ -91,5 +92,29 @@ CategoryTemplate.propTypes = {
     hasNextPage: PropTypes.bool.isRequired,
   }).isRequired,
 };
+
+// Head takes its props from Gatsby, not from a caller, and it cannot carry
+// propTypes: Gatsby strips this export out of the browser bundle, which would
+// leave a `Head.propTypes = {}` statement next to it referencing nothing -
+// "Head is not defined" at runtime in develop.
+/* eslint-disable react/prop-types */
+export const Head = ({ pageContext, location }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { category, currentPage } = pageContext;
+  const pageTitle = currentPage > 0
+    ? `${category} - Page ${currentPage} - ${siteTitle}`
+    : `${category} - ${siteTitle}`;
+
+  return (
+    <Seo
+      title={pageTitle}
+      description={siteSubtitle}
+      pathname={location.pathname}
+    />
+  );
+};
+
+
+/* eslint-enable react/prop-types */
 
 export default CategoryTemplate;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import TagsListTemplate from './tags-list-template';
+import TagsListTemplate, { Head } from './tags-list-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
 import categoriesMetadata from '../../jest/__fixtures__/categories-metadata';
@@ -58,4 +58,14 @@ describe('TagsListTemplate', () => {
   });
 
   
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head location={{ pathname: '/tags/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'Tags - Test title',
+      );
+    });
+  });
 });

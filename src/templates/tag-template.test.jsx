@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import TagTemplate from './tag-template';
+import TagTemplate, { Head } from './tag-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
 import pageContext from '../../jest/__fixtures__/page-context';
@@ -72,4 +72,14 @@ describe('TagTemplate', () => {
       getByTestId('pagination');
     })
   })
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head {...props} location={{ pathname: '/tag/test/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'All Posts tagged as "test" - Page 1 - Test title',
+      );
+    });
+  });
 });

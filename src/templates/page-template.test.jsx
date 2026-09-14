@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import PageTemplate from './page-template';
+import PageTemplate, { Head } from './page-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import markdownRemark from '../../jest/__fixtures__/markdown-remark';
 
@@ -54,6 +54,16 @@ describe('PageTemplate', () => {
     it('Should show the title', () => {
       const { getByTestId } = render(<PageTemplate {...props} />);
       getByTestId('page-container');
+    });
+  });
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head {...props} location={{ pathname: '/pages/test/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'test - Test title',
+      );
     });
   });
 });

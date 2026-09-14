@@ -1,71 +1,63 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useSiteMetadata } from '../../hooks';
 
-const SEO = ({ title, description, image, article }) => {
-  const { pathname } = useLocation()
-  const { subtitle, url, author } = useSiteMetadata();
+// Rendered from each template's `Head` export, not from the page body:
+// Gatsby's Head API only collects elements returned by that export.
+const Seo = ({ title, description, image, article, pathname }) => {
+  const { url, title: siteTitle, author } = useSiteMetadata();
 
-  const {
-    photo,
-    contacts,
-  } = author;
+  // siteMetadata.url carries the path prefix and a trailing slash
+  // (https://host/my-personal-blog/), which makes the two joins below differ:
+  //
+  //  - asset paths (/media/x.png) are prefix-less, so they hang off the full
+  //    site url;
+  //  - location.pathname already includes the prefix, so it hangs off the
+  //    origin. Joining it to the full url is what produced
+  //    /my-personal-blog/my-personal-blog/... before.
+  const siteUrl = url.replace(/\/+$/, '');
+  const { origin } = new URL(siteUrl);
+  const join = (base, p) => (p ? `${base}${p.startsWith('/') ? p : `/${p}`}` : null);
 
-  const seo = {
-    title,
-    description: description || subtitle,  
-    image: `${url}${image || photo}`,
-    url: `${url}${pathname}`,
-  }
+  const metaImage = join(siteUrl, image || author.photo);
+  const canonical = join(origin, pathname);
 
   return (
-    <Helmet title={seo.title} titleTemplate={title}>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+    <>
+      <html lang="en" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
 
-      {seo.url && <meta property="og:url" content={seo.url} />}
+      <meta property="og:site_name" content={siteTitle} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={article ? 'article' : 'website'} />
+      {canonical && <meta property="og:url" content={canonical} />}
+      {metaImage && <meta property="og:image" content={metaImage} />}
 
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-
-      {seo.title && <meta property="og:title" content={seo.title} />}
-
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
+      <meta name="twitter:card" content={article ? 'summary_large_image' : 'summary'} />
+      {author.contacts.twitter && (
+        <meta name="twitter:creator" content={author.contacts.twitter} />
       )}
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {metaImage && <meta name="twitter:image" content={metaImage} />}
+    </>
+  );
+};
 
-      {seo.image && <meta property="og:image" content={seo.image} />}
-
-      <meta name="twitter:card" content="summary_large_image" />
-
-      {contacts.twitter && (
-        <meta name="twitter:creator" content={contacts.twitter} />
-      )}
-
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
-      )}
-
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
-    </Helmet>
-  )
-}
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
+Seo.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   image: PropTypes.string,
   article: PropTypes.bool,
-}
+  pathname: PropTypes.string,
+};
 
-SEO.defaultProps = {
-  title: null,
-  description: null,
+Seo.defaultProps = {
   image: null,
   article: false,
-}
+  pathname: null,
+};
 
-export default SEO
+export default Seo;

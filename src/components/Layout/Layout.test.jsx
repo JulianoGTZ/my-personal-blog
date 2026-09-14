@@ -5,9 +5,6 @@ import Layout from './Layout';
 describe('Layout', () => {
   const props = {
     children: <div>Some rich content</div>,
-    description: 'A great description wich makes me cry',
-    title: 'Why Corinthians is the best team?',
-    socialImage: 'some-path.jpg',
   };
 
   beforeEach(() => {

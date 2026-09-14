@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import CategoriesListTemplate from './categories-list-template';
+import CategoriesListTemplate, { Head } from './categories-list-template';
 import categoriesMetadata from '../../jest/__fixtures__/categories-metadata';
 
 describe('CategoriesListTemplate', () => {
@@ -26,6 +26,16 @@ describe('CategoriesListTemplate', () => {
     categoriesMetadata.forEach((category) => {
       getByTestId(`category-${category.fieldValue}`);
       getByText(`${category.fieldValue} (${category.totalCount})`);
+    });
+  });
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head location={{ pathname: '/categories/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'Categories - Test title',
+      );
     });
   });
 });

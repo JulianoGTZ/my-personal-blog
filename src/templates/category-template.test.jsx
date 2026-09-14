@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react'
-import CategoryTemplate from './category-template';
+import CategoryTemplate, { Head } from './category-template';
 import siteMetadata from '../../jest/__fixtures__/site-metadata';
 import allMarkdownRemark from '../../jest/__fixtures__/all-markdown-remark';
 import pageContext from '../../jest/__fixtures__/page-context';
@@ -73,4 +73,14 @@ describe('CategoryTemplate', () => {
       getByTestId('pagination');
     })
   })
+
+  describe('Head', () => {
+    it('Should title the document with the page and the site', () => {
+      const { container } = render(<Head {...props} location={{ pathname: '/category/test/' }} />);
+
+      expect(container.querySelector('title').textContent).toBe(
+        'Clojure category - Page 1 - Test title',
+      );
+    });
+  });
 });
