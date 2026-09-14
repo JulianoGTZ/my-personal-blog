@@ -59,4 +59,6 @@ export const Head = ({ data, location }) => {
   );
 };
 
+/* eslint-enable react/prop-types */
+
 export default PageTemplate;

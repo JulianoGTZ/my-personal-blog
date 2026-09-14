@@ -39,6 +39,11 @@ PostTemplate.propTypes = {
   }).isRequired,
 };
 
+// Head takes its props from Gatsby, not from a caller, and it cannot carry
+// propTypes: Gatsby strips this export out of the browser bundle, which would
+// leave a `Head.propTypes = {}` statement next to it referencing nothing -
+// "Head is not defined" at runtime in develop.
+/* eslint-disable react/prop-types */
 export const Head = ({ data, location }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { title: postTitle, description, socialImage } = data.markdownRemark.frontmatter;
@@ -54,12 +59,7 @@ export const Head = ({ data, location }) => {
   );
 };
 
-Head.propTypes = {
-  data: PropTypes.shape({
-    // eslint-disable-next-line react/forbid-prop-types
-    markdownRemark: PropTypes.any.isRequired,
-  }).isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string }).isRequired,
-};
+
+/* eslint-enable react/prop-types */
 
 export default PostTemplate;
