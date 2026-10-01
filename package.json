@@ -68,7 +68,7 @@
     "katex": "^0.16.21",
     "lodash": "^4.18.1",
     "lost": "^9.0.2",
-    "moment": "^2.29.4",
+    "moment": "^2.31.0",
     "node-notifier": "^10.0.1",
     "normalize-scss": "^7.0.1",
     "postcss-pxtorem": "6.0.0",
